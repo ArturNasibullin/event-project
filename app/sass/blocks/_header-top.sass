@@ -1,0 +1,86 @@
+.header
+	&-top
+		position: absolute
+		top: 0
+		left: 0
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		margin-top: 30px
+		padding: 15px
+		&__menu
+			justify-self: start
+			font-size: 18px
+			line-height: 2.05
+			@include regular
+		&__phone
+			font-size: 20px
+			font-weight: bold
+			line-height: 1.85
+			@include gotham
+		&__link
+			margin-left: 30px
+			text-transform: uppercase
+			opacity: 0.8
+			font-size: 14px
+			font-weight: bold
+			line-height: 2.43
+			@include bold
+	&-hero
+		&__wrap
+			margin-top: 250px
+			position: relative
+		&__title
+			font-size: 62px
+			font-weight: 500
+			@include gotham
+		&__subtitle
+			margin: 20px 0 70px
+			font-size: 22px
+			font-weight: 300
+			line-height: 1.55
+			@include light
+		&__link
+			text-transform: uppercase
+			margin-left: 20px
+			font-size: 14px
+			letter-spacing: 0.35
+			color: $orange
+			@include bold
+		&__img
+			position: absolute
+			top: -25%
+			right: -35%
+			z-index: -1
+			margin-right: 20px
+			width: 750px
+			height: auto
+			display: inline-block
+			&::after
+				content: ""
+				position: absolute
+				z-index: -3
+				top: 0
+				right: 150px
+				border-radius: 50%
+				width: 700px
+				height: 700px
+				background-color: $yellow
+		&__tabs
+			margin-top: 200px
+.menu
+	&__item
+		margin-right: 20px
+		border-radius: 5px
+		padding: 2px 8px
+		transition: all 0.2s ease-in
+		@include regular
+		&:hover
+			background-color: $yellow
+.tabs
+	&__item
+		font-size: 18px
+		line-height: 2.05
+		@include regular
