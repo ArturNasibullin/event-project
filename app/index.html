@@ -165,6 +165,65 @@
 		<!-- /.container -->
 	</section>
 	<!-- /.services -->
+	<section class="calc">
+		<div class="container">
+			<div class="calc__wrap">
+				<h2 class="calc__title title">Узнайте стоимость Вашей акции<br>за 2 минуты!</h2>
+				<form action="#" class="calc__form form">
+					<div class="form__wrap">
+						<div class="form__item">
+							<label for="form__select" class="form__label">Кого вы ищите</label>
+							<select class="form__select" name="form__select" id="form__select">
+								<option selected value="form__select1">Промоутеры</option>
+								<option value="form__select2">Консультанты</option>
+								<option value="form__select3">Стендистки</option>
+								<option value="form__select4">Промо-модели</option>
+								<option value="form__select5">Хостес</option>
+							</select>
+						</div>
+
+						<div class="form__item">
+							<label class="form__label" for="inputDays">Колличество рабочих дней</label>
+							<input class="form__range" id="inputDays" type="range" min="1" max="14" step="1" value="3"
+								name="inputDays">
+							<span class="form__output" id="outputDays">3</span>
+						</div>
+
+						<div class="form__item">
+							<label class="form__label" for="inputHumans">Колличество человек</label>
+							<input class="form__range" id="inputHumans" type="range" min="1" max="7" step="1" value="2"
+								name="inputHumans">
+							<span class="form__output" id="outputHumans">2</span>
+						</div>
+
+						<div class="form__item">
+							<label class="form__label" for="inputHours">Колличество часов в день</label>
+							<input class="form__range" id="inputHours" type="range" min="4" max="12" step="1" value="4"
+								name="inputHours">
+							<span class="form__output" id="outputHours">4</span>
+						</div>
+
+						<div class="form__item form__precoast">
+							<span class="form__precoast-small">Предварительная стоимость:</span>
+							<p class="form__preacoast-big"></p><span>руб.</span>
+						</div>
+
+						<div class="form__item form__callback">
+							<input class="form__input" type="text" placeholder="Ваше имя">
+						</div>
+
+						<div class="form__item form__callback">
+							<input class="form__input" type="tel" name="telephone" id="" placeholder="Ваш телефон">
+						</div>
+
+						<div class="form__item form__callback">
+							<input class="btn form__btn" type="submit" value="Заказать персонал">
+						</div>
+					</div>
+			</div>
+	</section>
+
+	<script src="js/main.js"></script>
 </body>
 
 </html>
