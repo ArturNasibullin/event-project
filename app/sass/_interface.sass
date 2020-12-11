@@ -26,6 +26,76 @@ body
 	line-height: 1.55
 	color: #666666
 	+light
+.form
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+	&__item
+		width: 50%
+		margin-bottom: 50px
+	&__label
+		display: block
+		margin: 20px 0
+		font-size: 30px
+		color: $metal
+		+light
+	&__select
+		width: 90%
+		height: 50px
+		font-size: 22px
+		padding-left: 10px
+		+light
+	&__range
+		margin-top: 20px
+		width: 90%
+		-webkit-appearance: none
+		height: 12px
+		box-shadow: 0px 14px 57px 0 rgba(255, 115, 31, 0.35)
+		background-color: $yellow
+		border-radius: 5px
+		outline: none
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			appearance: none
+			width: 35px
+			height: 35px
+			border-radius: 50%
+			background: #ff9733
+			cursor: pointer
+	&__output
+		text-align: center
+		display: block
+		margin: 20px auto 0
+		font-size: 30px
+		color: $metal
+		transform: translateX(-35px)
+		+light
+	&__precoast
+		display: block
+		width: 100%
+		margin: 50px calc(40% - 100px)
+	&__callback
+		width: 30%
+	&__input
+		width: 90%
+		margin: 30px 0
+		height: 50px
+		border: 1px solid #00000036
+		padding-left: 5px
+	&__precoast
+		&-small
+			font-size: 22px
+			color: #000
+			+light
+		&-big
+			margin-top: 20px
+			font-size: 55px
+			+gotham
+	&__btn
+		margin: 15px 0 0 100px
+	&__privacy-politic
+		font-size: 16px
+		+light
 .link
 	text-transform: uppercase
 	margin-left: 20px
