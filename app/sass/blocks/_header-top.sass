@@ -1,21 +1,24 @@
 .header
 	&-top
-		position: absolute
-		top: 0
-		left: 0
-		display: flex
-		flex-direction: row
-		justify-content: space-between
-		align-items: center
-		width: 100%
-		margin-top: 30px
-		padding: 15px
+		&__wrap
+			position: fixed
+			z-index: 999
+			background-color: #f1f1f1
+			top: 0
+			left: 0
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			width: 100%
+			// margin-top: 30px
+			padding: 30px 15px 15px
 		&__menu
 			justify-self: start
 			font-size: 18px
 			line-height: 2.05
-		&__phone
-			font-size: 20px
+		&__contacts-tel
+			font-size: 25px
 			line-height: 1.85
 			@include gotham
 		&__btn
@@ -29,7 +32,7 @@
 			@include bold
 	&-hero
 		&__wrap
-			margin-top: 250px
+			margin-top: 350px
 			position: relative
 		&__title
 			font-size: 62px

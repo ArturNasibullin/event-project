@@ -18,3 +18,23 @@ function showSliderValue() {
 }
 
 showSliderValue();
+
+
+// Фиксированное меню после прокрутки
+function topMenuFixed() {
+	let header = document.querySelector('.header-top__wrapper');
+	let mainPage = document.querySelector('.header');
+	let mainPageH = mainPage.innerHeight();
+	let scrollPos = $(window).scrollTop();
+	
+	$(window).on('scroll load resize', function() {
+		let mainPageH = mainPage.innerHeight();
+		scrollPos = $(this).scrollTop();
+	
+		if (scrollPos > mainPageH) {
+		header.addClass('fixed');
+		} else {
+		header.removeClass('fixed');
+		}
+	});
+}
