@@ -27,8 +27,8 @@
 				</ul>
 			</div>
 			<div class="header-top__contacts">
-				<span class="header-top__phone">8 800 123-65-54</span>
-				<a href="#" class="header-top__link">заказать звонок</a>
+				<a href="tel:88002332323" class="contacts__tel">8 800-233-23-23</a>
+				<button href="#" class="header-top__btn">заказать звонок</button>
 			</div>
 		</div>
 		<div class="header-hero">
@@ -134,7 +134,7 @@
 							</ul>
 						</div>
 						<button class="services__btn btn">Заказать промоутеров</button>
-						<span class="services__link header-hero__link">Узнать больше</span>
+						<a class="services__link link">Узнать больше</a>
 					</div>
 					<!-- <div class="description__item">
 						<h3 class="services__head">Наши<br>консультанты:</h3>
@@ -146,7 +146,7 @@
 							</ul>
 						</div>
 						<button class="services__btn btn">Заказать консультантов</button>
-						<span class="services__link header-hero__link">Узнать больше</span>
+						<a class="services__link link">Узнать больше</a>
 					</div>
 					<div class="description__item">
 						<h3 class="services__head">Наши<br>модели:</h3>
@@ -158,7 +158,7 @@
 							</ul>
 						</div>
 						<button class="services__btn btn">Заказать моделей</button>
-						<span class="services__link header-hero__link">Узнать больше</span>
+						<a class="services__link link">Узнать больше</a>
 					</div> -->
 				</div>
 			</div>
@@ -481,36 +481,35 @@
 					</p>
 					<p><a href="tel:88002332323" class="contacts__tel">8 800-233-23-23</a></p>
 					<p class="contacts__adress">г. Москва, пл. Ленина, д. 1, оф. 2</p>
-					<p><a href="mailto:info@maximals.ru" class="contacts__tel">info@maximals.ru</a></p>
+					<p><a href="mailto:info@maximals.ru" class="contacts__mail">info@maximals.ru</a></p>
 				</div>
 				<!-- /.contacts__item -->
-				<div class="contacts__item">
+				<div class="contacts__item contacts-method">
+					<h3 class="contacts-method__title">Выберите удобный способ связи:</h3>
+					<div class="contacts-method__wrap">
+
+						<a href="tel:88002332323" class="contacts-method__item">
+							<img src="./img/contacts/telephone.png" alt="contact-method" class="contacts-method__img">
+							<p class="contacts-method__name">Звонок</p>
+						</a>
+
+						<a href="tg://resolve?domain=@nasibullin_artur" class="contacts-method__item">
+							<img src="./img/contacts/telegram.png" alt="contact-method" class="contacts-method__img">
+							<p class="contacts-method__name">Telegram</p>
+						</a>
+
+						<a href="https://wa.me/79120374755" class="contacts-method__item">
+							<img src="./img/contacts/whatsapp.png" alt="contact-method" class="contacts-method__img">
+							<p class="contacts-method__name">WhatsApp</p>
+						</a>
+
+						<a href="viber://add?number=380950000000" class="contacts-method__item">
+							<img src="./img/contacts/viber.png" alt="contact-method" class="contacts-method__img">
+							<p class="contacts-method__name">Viber</p>
+						</a>
+					</div>
 					<form action="#" class="contacts__form form">
-						<div class="form__wrap">
-							<div class="form__item">
-								<h3 class="form__title">Выберите удобный способ связи:</h3>
-							</div>
-							<div class="form__item">
-								<img src="./img/contacts/telephone.png" alt="contact-method" class="contact__form-img">
-								<p class="contact__form-method">Звонок</p>
-							</div>
-
-							<div class="form__item">
-								<img src="./img/contacts/telegram.png" alt="contact-method" class="contact__form-img">
-								<p class="contact__form-method">Telegram</p>
-							</div>
-
-							<div class="form__item">
-								<img src="./img/contacts/whatsapp.png" alt="contact-method" class="contact__form-img">
-								<p class="contact__form-method">WhatsApp</p>
-							</div>
-
-							<div class="form__item">
-								<img src="./img/contacts/viber.png" alt="contact-method" class="contact__form-img">
-								<p class="contact__form-method">Viber</p>
-							</div>
-
-
+						<div class="form__wrap contacts__form-wrap">
 							<div class="form__item form__callback contacts__form-callback">
 								<input class="form__input" type="text" placeholder="Ваше имя">
 							</div>
@@ -520,7 +519,7 @@
 							</div>
 
 							<div class="form__item form__callback contacts__form-callback">
-								<input class="btn form__btn" type="submit" value="Заказать персонал">
+								<input class="btn form__btn contacts__form-btn" type="submit" value="Заказать персонал">
 							</div>
 
 							<p class="form__privacy-politic">Нажимая на кнопку «заказать персонал» вы соглашаетесть
@@ -536,6 +535,47 @@
 		<!-- /.container -->
 	</section>
 	<!-- /.contacts -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__wrap">
+				<div class="footer__item">
+					<div class="footer__logo header-top__logo">
+						<img src="./img/logo.png" alt="">
+					</div>
+				</div>
+				<!-- /.footer__item -->
+				<div class="footer__item">
+					<div class="footer__socials">
+						<a href="#" class="footer__socials-link">
+							<i class="icon icon-vk"></i>
+						</a>
+						<a href="#" class="footer__socials-link">
+							<i class="icon icon-facebook"></i>
+						</a>
+						<a href="#" class="footer__socials-link">
+							<i class="icon icon-instagram"></i>
+						</a>
+						<a href="#" class="footer__socials-link">
+							<i class="icon icon-twitter"></i>
+						</a>
+					</div>
+					<!-- /.footer__socials -->
+				</div>
+				<!-- /.footer__item -->
+				<div class="footer__item">
+					<div class="footer__contacts header-top__contacts">
+						<a href="tel:88002332323" class="contacts__tel">8 800-233-23-23</a>
+						<button href="#" class="footer__btn header-top__btn">заказать звонок</button>
+					</div>
+				</div>
+				<!-- /.footer__item -->
+			</div>
+			<!-- /.footer__wrap -->
+		</div>
+		<!-- /.container -->
+	</footer>
+	<!-- /.footer -->
 	<script src="js/main.js"></script>
 </body>
 
