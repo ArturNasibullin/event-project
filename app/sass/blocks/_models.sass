@@ -1,0 +1,49 @@
+.models
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			z-index: -3
+			top: -10%
+			left: -20%
+			border-radius: 50%
+			width: 200px
+			height: 200px
+			@include gradient
+	&__card
+		position: relative
+		width: 25%
+		margin-bottom: 40px
+		&-img
+			width: 255px
+			height: 340px
+			border-radius: 10px
+	&__img
+		position: relative
+		&::before
+			content: ""
+			position: absolute
+			width: 255px
+			height: 340px
+			border-radius: 10px
+			background-color: $yellow
+			opacity: .6
+	&__name
+		margin-top: 40px
+		font-size: 22px
+		font-weight: 300
+		+light
+	&__socials
+		position: absolute
+		top: 33%
+		left: 13%
+		font-size: 50px
+		color: #ffffff
+		& a:hover
+			transition: all 0.3s
+			color: #1b74e7

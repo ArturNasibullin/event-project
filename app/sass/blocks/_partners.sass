@@ -1,0 +1,20 @@
+.partners
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			z-index: -3
+			top: 40%
+			right: -7%
+			border-radius: 50%
+			width: 100px
+			height: 100px
+			@include gradient
+	&__item
+		width: 25%
+		margin-bottom: 40px

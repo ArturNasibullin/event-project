@@ -1,0 +1,85 @@
+.contacts
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: start
+		position: relative
+		&::after
+			content: ""
+			position: absolute
+			z-index: -3
+			top: -40%
+			left: -10%
+			border-radius: 50%
+			width: 70px
+			height: 70px
+			@include gradient
+		&::before
+			content: ""
+			position: absolute
+			top: 25%
+			left: 30%
+			z-index: -3
+			background: #fff url("../img/contacts/old-phone.png")
+			width: 300px
+			height: 300px
+	&__item
+		width: 50%
+	&__text
+		margin: 0 0 50px 0
+		font-size: 22px
+		font-weight: 300
+		line-height: 1.37
+		color: $metal
+		+light
+	&__tel
+		margin-bottom: 50px
+		font-size: 30px
+		+gotham
+	&__adress
+		margin-bottom: 50px
+		font-size: 20px
+		+regular
+	&__mail
+		font-size: 20px
+	&__form
+		&-wrap
+			margin-top: 40px
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			align-content: center
+		&-callback
+			width: 50%
+			padding-left: 10px
+		&-btn
+			margin: 0
+.contacts-method
+	&__title
+		font-size: 20px
+		margin-bottom: 35px
+		text-align: center
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: start
+		text-align: center
+	&__item
+		width: 25%
+		padding: 10px
+		transition: all .3s
+		cursor: pointer
+		&:hover
+			background-color: $yellow
+			border-radius: 8px
+			color: #000
+
+	&__img
+		display: inline-block
+		margin-bottom: 15px
+	&__name
+		font-size: 18px
+		color: $metal
+		+light
