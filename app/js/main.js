@@ -85,10 +85,25 @@ $(window).on('load', (function() {
 	prevArrow: $('.arrow-left'),
 	nextArrow: $('.arrow-right'),
   });
-  $('.tabs').slick({
+  $('#header-hero__tabs').slick({
 	slidesToShow: 5,
 	slidesToScroll: 5,
 	asNavFor: '.header-hero__slider-wrap',
 	focusOnSelect: true,
   });
+
+//   $('.services__img').slick({
+// 	slidesToShow: 1,
+//   	slidesToScroll: 1,
+//   	fade: true,
+//   	swipe: false,
+//   	prevArrow: $('.arrow-left'),
+//   	nextArrow: $('.arrow-right'),
+// });
+// $('#services__tabs').slick({
+//   	slidesToShow: 5,
+//   	slidesToScroll: 5,
+//   	asNavFor: '.services__img',
+//   	focusOnSelect: true,
+// });
 }));
