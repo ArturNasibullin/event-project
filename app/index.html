@@ -42,30 +42,40 @@
 						</p>
 						<button class="btn header-hero__order-btn">Заказать персонал</button>
 						<a href="#" class="header-hero__link link">Узнать больше</a>
+						<div class="header-hero__slider-arrows">
+							<button class="arrow arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
+									alt="left button"></button>
+							<button class="arrow arrow-right" class="slick-next"><img src="./img/arrow-right.png"
+									alt="right button"></button>
+						</div>
 					</div>
-					<!-- <div class="header-hero__img">
-						<img src="./img/header-1.png" alt="header-1">
-					</div> -->
-					<!-- <div class="header-hero__img">
-						<img src="./img/header-2.png" alt="header-2">
-					</div> -->
-					<!-- <div class="header-hero__img">
-						<img src="./img/header-3.png" alt="header-3">
-					</div> -->
-					<!-- <div class="header-hero__img">
-						<img src="./img/header-4.png" alt="header-4">
-					</div> -->
-					<div class="header-hero__img">
-						<img src="./img/header-5.png" alt="header-5">
-					</div>
+					<div class="header-hero__slider">
+						<div class="header-hero__slider-wrap">
+							<div class="header-hero__slider-item">
+								<img src="./img/header-1.png" alt="header-1">
+							</div>
+							<div class="header-hero__slider-item">
+								<img src="./img/header-4.png" alt="header-2">
+							</div>
+							<div class="header-hero__slider-item">
+								<img src="./img/header-3.png" alt="header-3">
+							</div>
+							<div class="header-hero__slider-item">
+								<img src="./img/header-2.png" alt="header-4">
+							</div>
+							<div class="header-hero__slider-item">
+								<img src="./img/header-5.png" alt="header-5">
+							</div>
+						</div>
 
+					</div>
 					<div class="header-hero__tabs">
 						<ul class="tabs">
-							<li class="tabs__item menu__item"><a href="#">Промоутеры</a></li>
-							<li class="tabs__item menu__item"><a href="#">Промо-модели</a></li>
-							<li class="tabs__item menu__item"><a href="#">Стендистки</a></li>
-							<li class="tabs__item menu__item"><a href="#">Консультанты</a></li>
-							<li class="tabs__item menu__item"><a href="#">Хостес</a></li>
+							<li class="tabs__item">Промоутеры</li>
+							<li class="tabs__item">Промо-модели</li>
+							<li class="tabs__item">Стендистки</li>
+							<li class="tabs__item">Консультанты</li>
+							<li class="tabs__item">Хостес</li>
 						</ul>
 					</div>
 				</div>
@@ -84,22 +94,22 @@
 			<div class="about__wrap">
 				<div class="about__item">
 					<img src="./img/about/1.png" alt="" class="about__img">
-					<div class="about__number">10</div>
+					<div id="about__year" class="about__number">0</div>
 					<div class="about__text">лет<br>работы</div>
 				</div>
 				<div class="about__item">
 					<img src="./img/about/2.png" alt="" class="about__img">
-					<div class="about__number">34</div>
+					<div id="about__sity" class="about__number">34</div>
 					<div class="about__text">городов<br>присутствия</div>
 				</div>
 				<div class="about__item">
 					<img src="./img/about/3.png" alt="" class="about__img">
-					<div class="about__number">1011</div>
+					<div id="about__event" class="about__number">1011</div>
 					<div class="about__text">мероприятий<br>проведено</div>
 				</div>
 				<div class="about__item">
 					<img src="./img/about/4.png" alt="" class="about__img">
-					<div class="about__number">543</div>
+					<div id="about__people" class="about__number">543</div>
 					<div class="about__text">позитивных<br>промоутеров</div>
 				</div>
 			</div>
@@ -584,7 +594,7 @@
 	</footer>
 	<!-- /.footer -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/libs.js"></script>
+	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

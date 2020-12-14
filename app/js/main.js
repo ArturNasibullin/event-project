@@ -1,40 +1,94 @@
-function showSliderValue() {
-	const days = document.getElementById("inputDays");
-	const human = document.getElementById("inputHumans");
-	const hours = document.getElementById("inputHours");
-	let outputDays = document.getElementById("outputDays");
-	let outputHumans = document.getElementById("outputHumans");
-	let outputHours = document.getElementById("outputHours");
+function ready(fn) {
+	if (document.readyState != 'loading'){
+	  fn();
+	} else {
+	  document.addEventListener('DOMContentLoaded', fn);
+	}
+  }
+  ready(() => {
 
-	days.oninput = function() {
-		outputDays.textContent = this.value;
-	};
-	human.oninput = function() {
-		outputHumans.textContent = this.value;
-	};
-	hours.oninput = function() {
-		outputHours.textContent = this.value;
-	};
-}
+	// Отображение значений range в калькуляторе
+	function showSliderValue() {
+		const days = document.getElementById("inputDays");
+		const human = document.getElementById("inputHumans");
+		const hours = document.getElementById("inputHours");
+		let outputDays = document.getElementById("outputDays");
+		let outputHumans = document.getElementById("outputHumans");
+		let outputHours = document.getElementById("outputHours");
 
-showSliderValue();
+		days.oninput = function() {
+			outputDays.textContent = this.value;
+		};
+		human.oninput = function() {
+			outputHumans.textContent = this.value;
+		};
+		hours.oninput = function() {
+			outputHours.textContent = this.value;
+		};
+	}
+	showSliderValue();
 
+	// Фиксированное меню после прокрутки
+	function topMenuFixed() {
+		let header = document.querySelector('.header-top__wrap');
+		let mainPage = document.querySelector('.header-hero__tabs').offsetTop;
 
-// Фиксированное меню после прокрутки
-function topMenuFixed() {
-	let header = document.querySelector('.header-top__wrapper');
-	let mainPage = document.querySelector('.header');
-	let mainPageH = mainPage.innerHeight();
-	let scrollPos = $(window).scrollTop();
+		window.addEventListener("scroll", function() {
+			
+			let scrollPos = window.pageYOffset;
+				if (scrollPos > mainPage) {
+				header.style.position = "fixed";
+				} else {
+				header.style.position = "absolute";
+				}
+		});
+	}
+	topMenuFixed();
+
+	// Эффект бегущих цифр
+	let time = 2000; //ms
+
+	function outNum(num, step, elem) {
+		let l = document.querySelector('#' + elem);
+		n = 0;
+		let t = Math.round(time / (num / step));
+		let interval = setInterval(() => {
+			n = n + step;
+			if (n >= num) {
+				clearInterval(interval);
+				n = num;
+			}
+			l.innerHTML = n;
+		}, t);
+	}
 	
-	$(window).on('scroll load resize', function() {
-		let mainPageH = mainPage.innerHeight();
-		scrollPos = $(this).scrollTop();
-	
-		if (scrollPos > mainPageH) {
-		header.addClass('fixed');
-		} else {
-		header.removeClass('fixed');
+	let wPage = document.querySelector('.tabs').offsetTop - 50;
+
+	window.addEventListener("scroll", function onScroll() {
+		if (window.pageYOffset > wPage) {
+			outNum(12, 1, 'about__year');
+			outNum(34, 1, 'about__sity');
+			outNum(1011, 10, 'about__event');
+			outNum(543, 10, 'about__people');
+			this.removeEventListener("scroll", onScroll);
 		}
 	});
-}
+  });
+
+
+$(window).on('load', (function() {
+  $('.header-hero__slider-wrap').slick({
+  	slidesToShow: 1,
+	slidesToScroll: 1,
+	fade: true,
+	swipe: false,
+	prevArrow: $('.arrow-left'),
+	nextArrow: $('.arrow-right'),
+  });
+  $('.tabs').slick({
+	slidesToShow: 5,
+	slidesToScroll: 5,
+	asNavFor: '.header-hero__slider-wrap',
+	focusOnSelect: true,
+  });
+}));

@@ -32,7 +32,7 @@ gulp.task('scripts', function() {
 		'app/js/libs/slick.min.js',  // Берем jQuery
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
-		.pipe(uglify()) // Сжимаем JS файл
+		// .pipe(uglify()) // Сжимаем JS файл
 		.pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
 });
 
