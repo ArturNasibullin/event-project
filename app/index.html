@@ -29,7 +29,7 @@
 			</div>
 			<div class="header-top__contacts">
 				<a href="tel:88002332323" class="header-top__contacts-tel">8 800-233-23-23</a>
-				<button href="#" class="header-top__btn">заказать звонок</button>
+				<button class="header-top__btn modal-open">заказать звонок</button>
 			</div>
 		</div>
 		<div class="header-hero">
@@ -40,7 +40,7 @@
 						<p class="header-hero__subtitle">Подберем любой персонал и организуем<br>мероприятия любой
 							сложности.
 						</p>
-						<button class="btn header-hero__order-btn">Заказать персонал</button>
+						<button class="btn header-hero__order-btn modal-open">Заказать персонал</button>
 						<a href="#" class="header-hero__link link">Узнать больше</a>
 						<div class="header-hero__slider-arrows">
 							<button class="arrow arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
@@ -130,7 +130,7 @@
 				<div class="services__description description">
 					<div class="description__item">
 						<div class="services__img">
-							<img src="./img/services/services-3.png" alt="services image">
+							<img src="./img/services/services-4.png" alt="services image">
 						</div>
 						<h3 class="services__head">Наши<br>промоутеры:</h3>
 						<div class="services__checks">
@@ -140,23 +140,8 @@
 								<li class="check_item">Всегда помогут</li>
 							</ul>
 						</div>
-						<button class="services__btn btn">Заказать промоутеров</button>
-						<a class="services__link link">Узнать больше</a>
-					</div>
-					<div class="description__item">
-						<div class="services__img">
-							<img src="./img/services/services-4.png" alt="services image">
-						</div>
-						<h3 class="services__head">Наши<br>консультанты:</h3>
-						<div class="services__checks">
-							<ul class="check">
-								<li class="check_item">Разбираются в теме</li>
-								<li class="check_item">Знают подход к любому клиенту</li>
-								<li class="check_item">Воспитаны и общительны</li>
-							</ul>
-						</div>
-						<button class="services__btn btn">Заказать консультантов</button>
-						<a class="services__link link">Узнать больше</a>
+						<button class="services__btn btn modal-open">Заказать промоутеров</button>
+						<a href="#" class="services__link link">Узнать больше</a>
 					</div>
 					<div class="description__item">
 						<div class="services__img">
@@ -165,13 +150,28 @@
 						<h3 class="services__head">Наши<br>модели:</h3>
 						<div class="services__checks">
 							<ul class="check">
+								<li class="check_item">Разбираются в теме</li>
+								<li class="check_item">Знают подход к любому клиенту</li>
+								<li class="check_item">Воспитаны и общительны</li>
+							</ul>
+						</div>
+						<button class="services__btn btn modal-open">Заказать моделей</button>
+						<a href="#" class="services__link link">Узнать больше</a>
+					</div>
+					<div class="description__item">
+						<div class="services__img">
+							<img src="./img/services/services-3.png" alt="services image">
+						</div>
+						<h3 class="services__head">Наши<br>консультанты:</h3>
+						<div class="services__checks">
+							<ul class="check">
 								<li class="check_item">Привлекают внимание</li>
 								<li class="check_item">Знают иностранные языки</li>
 								<li class="check_item">Всегда в отличной форме</li>
 							</ul>
 						</div>
-						<button class="services__btn btn">Заказать моделей</button>
-						<a class="services__link link">Узнать больше</a>
+						<button class="services__btn btn modal-open">Заказать консультантов</button>
+						<a href="#" class="services__link link">Узнать больше</a>
 					</div>
 				</div>
 			</div>
@@ -220,7 +220,7 @@
 
 						<div class="form__item form__precoast">
 							<span class="form__precoast-small">Предварительная стоимость:</span>
-							<p class="form__precoast-big">16000<span> руб.</span></p>
+							<span class="form__precoast-big">16000</span><span> руб.</span>
 						</div>
 
 						<div class="form__item form__callback">
@@ -246,6 +246,12 @@
 	<section class="jobs">
 		<div class="container">
 			<h2 class="jobs__title title">Наши работы</h2>
+			<div class="jobs__slider-arrows">
+				<button class="arrow arrow-left jobs__arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
+						alt="left button"></button>
+				<button class="arrow arrow-right jobs__arrow-right" class="slick-next"><img src="./img/arrow-right.png"
+						alt="right button"></button>
+			</div>
 			<div class="jobs__wrap">
 				<div class="jobs__item">
 					<div class="jobs__item-img"><img src="../img/jobs/jobs-1.jpg" alt="jobs-img"></div>
@@ -257,7 +263,7 @@
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
 					<!-- /.jobs__item-subtitle -->
-					<button class="jobs__btn btn">Заказать персонал</button>
+					<button class="jobs__btn btn modal-open">Заказать персонал</button>
 					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
 					<!-- /.jobs__link link -->
@@ -273,7 +279,7 @@
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
 					<!-- /.jobs__item-subtitle -->
-					<button class="jobs__btn btn">Заказать персонал</button>
+					<button class="jobs__btn btn modal-open">Заказать персонал</button>
 					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
 					<!-- /.jobs__link link -->
@@ -289,7 +295,7 @@
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
 					<!-- /.jobs__item-subtitle -->
-					<button class="jobs__btn btn">Заказать персонал</button>
+					<button class="jobs__btn btn modal-open">Заказать персонал</button>
 					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
 					<!-- /.jobs__link link -->
@@ -305,7 +311,7 @@
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
 					<!-- /.jobs__item-subtitle -->
-					<button class="jobs__btn btn">Заказать персонал</button>
+					<button class="jobs__btn btn modal-open">Заказать персонал</button>
 					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
 					<!-- /.jobs__link link -->
@@ -320,6 +326,12 @@
 	<section class="models">
 		<div class="container">
 			<h2 class="models__title title">Наши модели</h2>
+			<div class="models__slider-arrows">
+				<button class="arrow arrow-left models__arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
+						alt="left button"></button>
+				<button class="arrow arrow-right models__arrow-right" class="slick-next"><img
+						src="./img/arrow-right.png" alt="right button"></button>
+			</div>
 			<div class="models__wrap">
 				<div class="models__card">
 					<div class="models__img">
@@ -443,6 +455,12 @@
 		<div class="container">
 			<h2 class="partners__title title">Нам доверяют</h2>
 			<!-- /.partners__title title -->
+			<div class="partners__slider-arrows">
+				<button class="arrow arrow-left partners__arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
+						alt="left button"></button>
+				<button class="arrow arrow-right partners__arrow-right" class="slick-next"><img
+						src="./img/arrow-right.png" alt="right button"></button>
+			</div>
 			<div class="partners__wrap">
 				<div class="partners__item">
 					<img src="./img/partners/partner-1.png" alt="partner">
@@ -579,7 +597,8 @@
 				<div class="footer__item">
 					<div class="footer__contacts header-top__contacts">
 						<a href="tel:88002332323" class="footer__contacts-tel contacts__tel">8 800-233-23-23</a>
-						<button href="#" class="footer__contacts-btn header-top__btn">заказать звонок</button>
+						<button href="#" class="footer__contacts-btn header-top__btn modal-open">заказать
+							звонок</button>
 					</div>
 				</div>
 				<div class="footer_item">
@@ -595,6 +614,32 @@
 		<!-- /.container -->
 	</footer>
 	<!-- /.footer -->
+
+	<div class="modal">
+		<div class="modal__overlay">
+			<div class="modal__wrapper">
+				<a class="modal__close" href="#">&times</a>
+				<form action="#" class="modal__form form">
+					<div class="modal__form-wrapper">
+						<div class="modal__header">
+							<h3>Оставьте заявку <br>и мы Вам перезвоним!</h3>
+						</div>
+						<div class="modal__item form__item">
+							<input type="text" placeholder="Ваше имя" name="username" id="username"
+								class="modal__input form__input">
+						</div>
+						<div class="modal__item form__item">
+							<input type="text" placeholder="Ваш телефон" name="usertel" id="usertel"
+								class="modal__input form__input">
+						</div>
+						<div class="modal__item form__item">
+							<input type="submit" class="btn modal__btn" value="Оставить заявку">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>

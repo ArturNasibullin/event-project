@@ -33,7 +33,6 @@ function tabs(tabsSelector) {
             });
         }
     });
-
 }
 
 tabs('.services__tabs-item');

@@ -1,13 +1,23 @@
 .jobs
+	position: relative
 	&__wrap
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
 		align-items: center
+	&__slider-arrows
+		position: absolute
+		z-index: 9999
+		top: 0%
+		right: 19%
+		width: 10%
 	&__item
 		width: 50%
 		padding-right: 50px
+		padding-left: 50px
 		margin-bottom: 40px
+		&:focus
+			outline: none
 		&-img
 		&-title
 			margin-top: 40px
@@ -20,4 +30,3 @@
 			line-height: 1.7
 			color: #999999
 			+regular
-	&__link

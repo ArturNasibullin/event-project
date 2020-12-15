@@ -38,6 +38,7 @@ function ready(fn) {
 			let scrollPos = window.pageYOffset;
 				if (scrollPos > mainPage) {
 				header.style.position = "fixed";
+				header.style.opacity = "0.9";
 				} else {
 				header.style.position = "absolute";
 				}
@@ -73,37 +74,167 @@ function ready(fn) {
 			this.removeEventListener("scroll", onScroll);
 		}
 	});
-  });
 
 
+	//Анимации
+	// fadeIn function 
+	function fadeIn(el, display) {
+		el.style.opacity = 0;
+		el.style.display = display || 'block';
+		(function fade() {
+			var val = parseFloat(el.style.opacity);
+			if (!((val += .1) > 1)) {
+				el.style.opacity = val;
+				requestAnimationFrame(fade);
+			}
+		})();
+	}
+	// fadeOut function 
+	function fadeOut(el) {
+		el.style.opacity = 1;
+		(function fade() {
+			if ((el.style.opacity -= .1) < 0) {
+				el.style.display = 'none';
+			} else {
+				requestAnimationFrame(fade);
+			}
+		})();
+	}
+
+
+	// Модальное окно
+	let modal = document.querySelector('.modal');
+	let modalOpen = document.querySelectorAll('.modal-open');
+	let modalClose = document.querySelector('.modal__close');
+	let modalOverlay = document.querySelector('.modal__overlay');
+
+		//Открыть модальное окно при клике на кнопки с классом .modal-open
+		modalOpen.forEach(mdl => {
+			mdl.addEventListener('click', () => {
+				fadeIn(modal, 'block');
+				document.body.style.overflow = 'hidden';
+			});
+		});
+
+		//Закрыть модальное окно при клике на крестик
+		modalClose.addEventListener('click', () => {
+			fadeOut(modal);
+			document.body.style.overflow = '';
+		});
+
+		// Закрыть модальное окно при нажатии на клавишу Ecs
+		document.addEventListener('keydown', function(event) {
+			if (event.code === 'Escape') {
+				event.preventDefault();
+				fadeOut(modal);
+				document.body.style.overflow = '';
+			}
+		}, false);
+
+		// Закрыть модальное окно при нажатии на подложку
+		modalOverlay.addEventListener('click', function(event) {
+			if (event.target == modalOverlay) {
+				fadeOut(modal);
+				document.body.style.overflow = '';
+			}
+		});
+
+		// Открыть модальное окно при прокрутке до конца страницы
+		function showModalByScroll () {
+			if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+				fadeIn(modal, 'block');
+				document.body.style.overflow = 'hidden';
+				window.removeEventListener('scroll', showModalByScroll);
+			}
+		}
+		window.addEventListener('scroll', showModalByScroll);
+
+		//Калькулятор
+
+		function calc() {
+			let inputDays = 3, //default
+				inputHumans = 2, //default
+				inputHours = 4; //default
+
+			function getDynamicInformation (selector) {
+				const input = document.querySelector(selector);
+
+				input.addEventListener('input', () => {
+					switch (input.getAttribute('id')) {
+						case 'inputDays':
+							inputDays = +input.value;
+							break;
+						case 'inputHumans':
+							inputHumans = +input.value;
+							break;
+						case 'inputHours':
+							inputHours = +input.value;
+							break;
+					}
+					calcTotal(inputDays, inputHumans, inputHours);
+				});
+			}
+			getDynamicInformation('#inputDays');
+			getDynamicInformation('#inputHumans');
+			getDynamicInformation('#inputHours');
+
+			function calcTotal (inputDays, inputHumans, inputHours) {
+				const result = document.querySelector('.form__precoast-big');
+				
+				if (inputDays >= 1 || inputHumans >= 1 || inputHours >= 1) {
+					result.textContent = Math.round((inputDays * 2000) + (inputHumans * 7000) + (inputHours * 8));
+				} else {
+					result.textContent = Math.round(inputDays + inputHumans + inputHours);
+				}
+			}	
+		}
+		calc();
+});
+
+
+// Слайдер Slick
 $(window).on('load', (function() {
-  $('.header-hero__slider-wrap').slick({
-  	slidesToShow: 1,
-	slidesToScroll: 1,
-	fade: true,
-	swipe: false,
-	prevArrow: $('.arrow-left'),
-	nextArrow: $('.arrow-right'),
-  });
-  $('#header-hero__tabs').slick({
-	slidesToShow: 5,
-	slidesToScroll: 5,
-	asNavFor: '.header-hero__slider-wrap',
-	focusOnSelect: true,
-  });
 
-//   $('.services__img').slick({
-// 	slidesToShow: 1,
-//   	slidesToScroll: 1,
-//   	fade: true,
-//   	swipe: false,
-//   	prevArrow: $('.arrow-left'),
-//   	nextArrow: $('.arrow-right'),
-// });
-// $('#services__tabs').slick({
-//   	slidesToShow: 5,
-//   	slidesToScroll: 5,
-//   	asNavFor: '.services__img',
-//   	focusOnSelect: true,
-// });
+	// Слайдер header
+	$('.header-hero__slider-wrap').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		swipe: false,
+		prevArrow: $('.arrow-left'),
+		nextArrow: $('.arrow-right'),
+	});
+	$('#header-hero__tabs').slick({
+		slidesToShow: 5,
+		slidesToScroll: 5,
+		asNavFor: '.header-hero__slider-wrap',
+		focusOnSelect: true,
+	});
+
+	// Слайдер jobs
+	$('.jobs__wrap').slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		swipe: true,
+		prevArrow: $('.jobs__arrow-left'),
+		nextArrow: $('.jobs__arrow-right'),
+	});
+
+	// Слайдер models
+	$('.models__wrap').slick({
+		slidesToShow: 4,
+		slidesToScroll: 2,
+		swipe: true,
+		prevArrow: $('.models__arrow-left'),
+		nextArrow: $('.models__arrow-right'),
+	});
+
+	// Слайдер partners
+	$('.partners__wrap').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		swipe: true,
+		prevArrow: $('.partners__arrow-left'),
+		nextArrow: $('.partners__arrow-right'),
+	});
 }));
