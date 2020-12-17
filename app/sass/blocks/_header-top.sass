@@ -14,7 +14,7 @@
 			padding: 30px 15px 15px
 		&__menu
 			justify-self: start
-			font-size: 18px
+			font-size: 22px
 			line-height: 2.05
 		&__contacts-tel
 			font-size: 25px
@@ -100,6 +100,8 @@
 			left: 50%
 			background: $yellow
 			transition: all 0.3s
+		&:hover
+			cursor: pointer
 		&:hover:before
 			width: 100%
 			left: 0
@@ -110,8 +112,21 @@
 		line-height: 2.05
 		text-align: center
 		position: relative
+		&:before
+			content: ""
+			width: 0
+			height: 0.2em
+			position: absolute
+			bottom: 0
+			left: 50%
+			background: $yellow
+			transition: all 0.3s
 		&:hover
 			cursor: pointer
+		&:hover:before
+			width: 100%
+			left: 0
+			background: $yellow
 		&.slick-active
 			&:before
 				content: ""

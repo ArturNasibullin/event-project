@@ -136,7 +136,8 @@ function ready(fn) {
 	});
 
 	//Закрыть модальное окно при клике на крестик
-	modalClose.addEventListener('click', () => {
+	modalClose.addEventListener('click', (event) => {
+		event.preventDefault();
 		fadeOut(modal);
 		document.body.style.overflow = '';
 	});
@@ -153,6 +154,7 @@ function ready(fn) {
 	// Закрыть модальное окно при нажатии на подложку
 	modalOverlay.addEventListener('click', function(event) {
 		if (event.target == modalOverlay) {
+			event.preventDefault();
 			fadeOut(modal);
 			document.body.style.overflow = '';
 		}
@@ -241,26 +243,40 @@ function ready(fn) {
 	}
 	calc();
 
-	const animateCSS = (element, animation, prefix = 'animate__') => {
-	// We create a Promise and return it
-	return new Promise((resolve, reject) => {
-		const animationName = `${prefix}${animation}`;
-		const node = document.querySelector(element);
-	
-		node.classList.add(`${prefix}animated`, animationName);
-	
-		// When the animation ends, we clean the classes and resolve the Promise
-		function handleAnimationEnd() {
-		node.classList.remove(`${prefix}animated`, animationName);
-		resolve('Animation ended');
-		}
-	
+
+
+	//Animate CSS
+	animateCSS('.header-hero__title', 'animate__fadeInLeft');
+	animateCSS('.header-hero__slider', 'animate__fadeInRight');
+
+	function animateCSS (element, animation, prefix = 'animate__') {
+		const node  = document.querySelector(element);
+
+		node.classList.add(`${prefix}animated`, animation);
 		node.addEventListener('animationend', handleAnimationEnd, {once: true});
-		animateCSS('.my-element', 'bounce');
-	});
-		
-	};
-  });
+
+		function handleAnimationEnd() {
+			node.classList.remove(`${prefix}animated`, animation);
+			}		
+	}
+
+	let servicesPage = document.querySelector('.about').offsetTop - 250;
+	let jobsPage = document.querySelector('.calc').offsetTop - 200;
+	let modelsPage = document.querySelector('.jobs').offsetTop - 300;
+
+	function fadeBlock (animationStart, element, animation) {
+		window.addEventListener("scroll", function onScroll() {
+			if (window.pageYOffset > animationStart) {
+				animateCSS(element, animation);
+				this.removeEventListener("scroll", onScroll);
+			}
+		});
+	}
+	fadeBlock(servicesPage, '.services__img', 'animate__fadeInLeft');
+	fadeBlock(jobsPage, '.jobs__wrap', 'animate__fadeInUp');
+	fadeBlock(modelsPage, '.models__wrap', 'animate__zoomIn');
+	
+});
 
 
 // Слайдер Slick
@@ -287,6 +303,8 @@ $(window).on('load', (function() {
 		slidesToShow: 2,
 		slidesToScroll: 1,
 		swipe: true,
+		autoplay: true,
+  		autoplaySpeed: 3000,
 		prevArrow: $('.jobs__arrow-left'),
 		nextArrow: $('.jobs__arrow-right'),
 	});
@@ -296,6 +314,8 @@ $(window).on('load', (function() {
 		slidesToShow: 4,
 		slidesToScroll: 2,
 		swipe: true,
+		autoplay: true,
+  		autoplaySpeed: 2000,
 		prevArrow: $('.models__arrow-left'),
 		nextArrow: $('.models__arrow-right'),
 	});
@@ -305,7 +325,10 @@ $(window).on('load', (function() {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		swipe: true,
+		autoplay: true,
+  		autoplaySpeed: 4000,
 		prevArrow: $('.partners__arrow-left'),
 		nextArrow: $('.partners__arrow-right'),
 	});
+
 }));
