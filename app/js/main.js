@@ -46,6 +46,25 @@ function ready(fn) {
 	}
 	topMenuFixed();
 
+	//Smooth Scroll
+	const links = document.querySelectorAll(".menu__item a");
+
+	links.forEach(link => {
+		link.addEventListener("click", clickHandler);
+	});
+
+	function clickHandler(e) {
+	e.preventDefault();
+
+	const href = this.getAttribute("href");
+	const offsetTop = document.querySelector(href).offsetTop - 100;
+
+	scroll({
+		top: offsetTop,
+		behavior: "smooth"
+		});
+	}
+
 	// Эффект бегущих цифр
 	let time = 2000; //ms
 
@@ -108,88 +127,140 @@ function ready(fn) {
 	let modalClose = document.querySelector('.modal__close');
 	let modalOverlay = document.querySelector('.modal__overlay');
 
-		//Открыть модальное окно при клике на кнопки с классом .modal-open
-		modalOpen.forEach(mdl => {
-			mdl.addEventListener('click', () => {
-				fadeIn(modal, 'block');
-				document.body.style.overflow = 'hidden';
-			});
+	//Открыть модальное окно при клике на кнопки с классом .modal-open
+	modalOpen.forEach(mdl => {
+		mdl.addEventListener('click', () => {
+			fadeIn(modal, 'block');
+			document.body.style.overflow = 'hidden';
 		});
+	});
 
-		//Закрыть модальное окно при клике на крестик
-		modalClose.addEventListener('click', () => {
+	//Закрыть модальное окно при клике на крестик
+	modalClose.addEventListener('click', () => {
+		fadeOut(modal);
+		document.body.style.overflow = '';
+	});
+
+	// Закрыть модальное окно при нажатии на клавишу Ecs
+	document.addEventListener('keydown', function(event) {
+		if (event.code === 'Escape') {
+			event.preventDefault();
 			fadeOut(modal);
 			document.body.style.overflow = '';
-		});
-
-		// Закрыть модальное окно при нажатии на клавишу Ecs
-		document.addEventListener('keydown', function(event) {
-			if (event.code === 'Escape') {
-				event.preventDefault();
-				fadeOut(modal);
-				document.body.style.overflow = '';
-			}
-		}, false);
-
-		// Закрыть модальное окно при нажатии на подложку
-		modalOverlay.addEventListener('click', function(event) {
-			if (event.target == modalOverlay) {
-				fadeOut(modal);
-				document.body.style.overflow = '';
-			}
-		});
-
-		// Открыть модальное окно при прокрутке до конца страницы
-		function showModalByScroll () {
-			if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
-				fadeIn(modal, 'block');
-				document.body.style.overflow = 'hidden';
-				window.removeEventListener('scroll', showModalByScroll);
-			}
 		}
-		window.addEventListener('scroll', showModalByScroll);
+	}, false);
 
-		//Калькулятор
+	// Закрыть модальное окно при нажатии на подложку
+	modalOverlay.addEventListener('click', function(event) {
+		if (event.target == modalOverlay) {
+			fadeOut(modal);
+			document.body.style.overflow = '';
+		}
+	});
 
-		function calc() {
-			let inputDays = 3, //default
-				inputHumans = 2, //default
-				inputHours = 4; //default
+	// Открыть модальное окно при прокрутке до конца страницы
+	function showModalByScroll () {
+		if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+			fadeIn(modal, 'block');
+			document.body.style.overflow = 'hidden';
+			window.removeEventListener('scroll', showModalByScroll);
+		}
+	}
+	window.addEventListener('scroll', showModalByScroll);
 
-			function getDynamicInformation (selector) {
-				const input = document.querySelector(selector);
+	//Калькулятор
 
-				input.addEventListener('input', () => {
-					switch (input.getAttribute('id')) {
-						case 'inputDays':
-							inputDays = +input.value;
-							break;
-						case 'inputHumans':
-							inputHumans = +input.value;
-							break;
-						case 'inputHours':
-							inputHours = +input.value;
-							break;
-					}
-					calcTotal(inputDays, inputHumans, inputHours);
-				});
-			}
-			getDynamicInformation('#inputDays');
-			getDynamicInformation('#inputHumans');
-			getDynamicInformation('#inputHours');
+	function calc() {
+		let inputDays = 3, //default
+			inputHumans = 2, //default
+			inputHours = 4, //default
+			selectValue = 1;
 
-			function calcTotal (inputDays, inputHumans, inputHours) {
-				const result = document.querySelector('.form__precoast-big');
-				
-				if (inputDays >= 1 || inputHumans >= 1 || inputHours >= 1) {
-					result.textContent = Math.round((inputDays * 2000) + (inputHumans * 7000) + (inputHours * 8));
-				} else {
-					result.textContent = Math.round(inputDays + inputHumans + inputHours);
+		function getDynamicInformation (selector) {
+			let input = document.querySelector(selector);
+			let select = document.querySelector('.form__select');
+			
+			//Слушать изменение в Select и подставлять значение в calcTotal
+			select.addEventListener('change', (e) => {
+				switch (e.target.value) {
+					case '1':
+						selectValue = +e.target.value;
+						break;
+					case '2':
+						selectValue = +e.target.value;
+						break;
+					case '3':
+						selectValue = +e.target.value;
+						break;
+					case '4':
+						selectValue = +e.target.value;
+						break;	
+					case '5':
+						selectValue = +e.target.value;
+						break;
+			}});
+			
+			//Слушать изменение в input и подставлять значение в calcTotal
+			input.addEventListener('input', () => {
+				switch (input.getAttribute('id')) {
+					case 'inputDays':
+						inputDays = +input.value;
+						break;
+					case 'inputHumans':
+						inputHumans = +input.value;
+						break;
+					case 'inputHours':
+						inputHours = +input.value;
+						break;
 				}
-			}	
+				calcTotal(inputDays, inputHumans, inputHours, selectValue);
+			});
 		}
-		calc();
-});
+		getDynamicInformation('#inputDays');
+		getDynamicInformation('#inputHumans');
+		getDynamicInformation('#inputHours');
+
+		function calcTotal (inputDays, inputHumans, inputHours, selectValue) {
+			let result = document.querySelector('.form__precoast-big');
+			
+			if (selectValue === 1) {
+				result.textContent = Math.round(inputDays * inputHumans * (1000 * inputHours));
+				calcTotal();
+			} else if (selectValue == 2) {
+				result.textContent = Math.round(inputDays * inputHumans * (1100 * inputHours));
+				calcTotal();
+			} else if (selectValue == 3) {
+				result.textContent = Math.round(inputDays * inputHumans * (1200 * inputHours));
+				calcTotal();
+			} else if (selectValue == 4) {
+				result.textContent = Math.round(inputDays * inputHumans * (1300 * inputHours));
+			} else if (selectValue == 5) {
+				result.textContent = Math.round(inputDays * inputHumans * (1400 * inputHours));
+			}
+		}	
+	}
+	calc();
+
+	const animateCSS = (element, animation, prefix = 'animate__') => {
+	// We create a Promise and return it
+	return new Promise((resolve, reject) => {
+		const animationName = `${prefix}${animation}`;
+		const node = document.querySelector(element);
+	
+		node.classList.add(`${prefix}animated`, animationName);
+	
+		// When the animation ends, we clean the classes and resolve the Promise
+		function handleAnimationEnd() {
+		node.classList.remove(`${prefix}animated`, animationName);
+		resolve('Animation ended');
+		}
+	
+		node.addEventListener('animationend', handleAnimationEnd, {once: true});
+		animateCSS('.my-element', 'bounce');
+	});
+		
+	};
+  });
 
 
 // Слайдер Slick

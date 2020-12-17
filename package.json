@@ -1,5 +1,5 @@
 {
-  "name": "cabhub",
+  "name": "event",
   "version": "1.0.0",
   "description": "Adaptive crossbrowser webSite",
   "main": "",
@@ -9,6 +9,7 @@
   "author": "Artur Nasibullin",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "gulp-cli": "^2.3.0",
     "jquery": "^3.5.1",
     "save-dev": "0.0.1-security"
