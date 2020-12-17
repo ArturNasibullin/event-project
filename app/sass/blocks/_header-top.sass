@@ -11,30 +11,41 @@
 			justify-content: space-between
 			align-items: center
 			width: 100%
-			padding: 30px 15px 15px
+			padding: 10px 15px 15px
+		&__logo
+			@include _1170
+				width: 150px
+			@include _979
+				width: 100px
 		&__menu
 			justify-self: start
-			font-size: 22px
+			font-size: 18px
 			line-height: 2.05
-		&__contacts-tel
-			font-size: 25px
-			line-height: 1.85
-			@include gotham
+			padding: 0 15px
+		&__contacts
+			text-align: center
+			&-tel
+				font-size: 25px
+				line-height: 1.85
+				@include gotham
+				@include _979
+					font-size: 18px
 		&__btn
+			display: block
+			padding: 0
 			border: none
-			margin-left: 30px
 			text-transform: uppercase
-			// opacity: 0.8
 			font-size: 14px
-			line-height: 2.43
 			cursor: pointer
 			@include bold
+			&:focus
+				outline: none
 	&-hero
 		&__wrap
 			margin-top: 250px
 			position: relative
 		&__title
-			font-size: 62px
+			font-size: 40px
 			font-weight: 500
 			@include gotham
 		&__subtitle
@@ -52,6 +63,8 @@
 			max-width: 750px
 			height: auto
 			display: inline-block
+			@include _979
+				max-width: 650px
 			&::after
 				content: ""
 				position: absolute
@@ -62,15 +75,26 @@
 				width: 700px
 				height: 700px
 				@include gradient
+				@include _979
+					width: 500px
+					height: 500px
 			&-arrows
 				position: absolute
 				z-index: 9999
 				top: 78%
 				left: 3%
 				width: 10%
+				@include _979
+					top: 78%
 		&__tabs
 			margin-top: 220px
 			text-align: center
+			@include _979
+				margin-top: 100px
+		&__slider-item img
+			@include _979
+				margin-left: 100px
+				height: 500px
 .arrow
 	background-color: transparent
 	border: none
@@ -91,6 +115,10 @@
 		padding: 2px 8px
 		transition: all 0.6s ease-in
 		@include regular
+		@include _1170
+			font-size: 16px
+			padding: 0px 5px
+			margin-right: 0px
 		&:before
 			content: ""
 			width: 0

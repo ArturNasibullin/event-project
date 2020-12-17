@@ -31,12 +31,12 @@ function ready(fn) {
 	// Фиксированное меню после прокрутки
 	function topMenuFixed() {
 		let header = document.querySelector('.header-top__wrap');
-		let mainPage = document.querySelector('.header-hero__tabs').offsetTop;
+		let fixedSpot = document.querySelector('.header-hero__tabs').offsetTop;
 
 		window.addEventListener("scroll", function() {
 			
 			let scrollPos = window.pageYOffset;
-				if (scrollPos > mainPage) {
+				if (scrollPos > fixedSpot) {
 				header.style.position = "fixed";
 				header.style.opacity = "0.9";
 				} else {
