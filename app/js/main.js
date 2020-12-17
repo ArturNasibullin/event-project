@@ -243,6 +243,14 @@ function ready(fn) {
 	}
 	calc();
 
+	//Кнопка menu
+	let btn = document.querySelector('.header-top__nav-btn');
+	let menu = document.querySelector('.menu');
+
+	btn.addEventListener('click', () => {
+		menu.classList.toggle('active');
+		btn.classList.toggle('active');
+	});
 
 
 	//Animate CSS

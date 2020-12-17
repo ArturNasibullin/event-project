@@ -17,6 +17,8 @@
 				width: 150px
 			@include _979
 				width: 100px
+			@include _768
+				margin-right: 250px
 		&__menu
 			justify-self: start
 			font-size: 18px
@@ -48,12 +50,16 @@
 			font-size: 40px
 			font-weight: 500
 			@include gotham
+			@include _768
+				font-size: 28px
 		&__subtitle
 			margin: 20px 0 70px
 			font-size: 22px
 			font-weight: 300
 			line-height: 1.55
 			@include light
+			@include _768
+				font-size: 18px
 		&__slider
 			position: absolute
 			top: -25%
@@ -87,6 +93,7 @@
 				@include _979
 					top: 78%
 		&__tabs
+			background-color: #fff
 			margin-top: 220px
 			text-align: center
 			@include _979
@@ -108,6 +115,23 @@
 		transform: translateX(50%)
 
 .menu
+	display: flex
+	flex-wrap: wrap
+	position: relative
+	transition: all 0.3s
+	@include _768
+		flex-direction: column
+		text-align: center
+		width: 100%
+		margin-top: 70px
+		padding-left: 10px
+		padding-bottom: 10px
+		position: absolute
+		top: 0
+		left: 0
+		transform-origin: top
+		transform: scaleY(0)
+		background-color: #fff
 	&__item
 		position: relative
 		margin-right: 20px
@@ -119,6 +143,8 @@
 			font-size: 16px
 			padding: 0px 5px
 			margin-right: 0px
+		@include _768
+			font-size: 20px
 		&:before
 			content: ""
 			width: 0
@@ -134,12 +160,18 @@
 			width: 100%
 			left: 0
 			background: $yellow
+	&.active
+		transform: scaleY(1)
+
 .tabs
 	&__item
 		font-size: 22px
 		line-height: 2.05
 		text-align: center
 		position: relative
+		@include _768
+			font-size: 18px
+
 		&:before
 			content: ""
 			width: 0
