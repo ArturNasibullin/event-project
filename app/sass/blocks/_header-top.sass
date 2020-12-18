@@ -8,58 +8,65 @@
 			left: 0
 			display: flex
 			flex-direction: row
-			justify-content: space-between
+			justify-content: center
 			align-items: center
 			width: 100%
 			padding: 10px 15px 15px
+		&__nav-btn
+			width: 10%
 		&__logo
-			@include _1170
-				width: 150px
-			@include _979
-				width: 100px
+			margin-top: 8px
+			margin-left: 20px
+			width: 10%
 			@include _768
-				margin-right: 250px
+				width: 40%
 		&__menu
-			justify-self: start
-			font-size: 18px
+			width: 70%
+			text-align: center
 			line-height: 2.05
 			padding: 0 15px
+			@include _768
+				width: 0
 		&__contacts
-			text-align: center
+			width: 20%
+			@include fluidFontSize(22, 18, 768, 1170)
+			@include _768
+				margin: 0 auto
+				width: 50%
 			&-tel
-				font-size: 25px
 				line-height: 1.85
 				@include gotham
-				@include _979
-					font-size: 18px
+				@include _768
+					@include fluidFontSize(10, 18, 350, 768)
 		&__btn
 			display: block
+			justify-self: center
 			padding: 0
+			margin: 0
 			border: none
 			text-transform: uppercase
-			font-size: 14px
+			font-size: 0.875rem
 			cursor: pointer
 			@include bold
+			@include _768
+				@include fluidFontSize(10, 18, 350, 768)
 			&:focus
 				outline: none
 	&-hero
 		&__wrap
 			margin-top: 250px
 			position: relative
+		&__text
 		&__title
-			font-size: 40px
 			font-weight: 500
 			@include gotham
-			@include _768
-				font-size: 28px
+			@include fluidFontSize(28, 40, 480, 1170)
 		&__subtitle
 			margin: 20px 0 70px
-			font-size: 22px
 			font-weight: 300
 			line-height: 1.55
 			@include light
-			@include _768
-				font-size: 18px
+			@include fluidFontSize(18, 22, 768, 1170)
 		&__slider
 			position: absolute
 			top: -25%
@@ -71,6 +78,8 @@
 			display: inline-block
 			@include _979
 				max-width: 650px
+			@include _768
+				display: none
 			&::after
 				content: ""
 				position: absolute
@@ -89,15 +98,20 @@
 				z-index: 9999
 				top: 78%
 				left: 3%
-				width: 10%
+				width: 15%
 				@include _979
 					top: 78%
+				@include _768
+					display: none
+
 		&__tabs
-			background-color: #fff
+			background-color: #f1f1f1
 			margin-top: 220px
 			text-align: center
 			@include _979
 				margin-top: 100px
+			@include _768
+				display: none
 		&__slider-item img
 			@include _979
 				margin-left: 100px
@@ -113,10 +127,13 @@
 		transform: translateX(-50%)
 	&-right
 		transform: translateX(50%)
+	@include _768
+		display: none
 
 .menu
 	display: flex
 	flex-wrap: wrap
+	justify-content: center
 	position: relative
 	transition: all 0.3s
 	@include _768
@@ -131,7 +148,7 @@
 		left: 0
 		transform-origin: top
 		transform: scaleY(0)
-		background-color: #fff
+		background-color: #f1f1f1
 	&__item
 		position: relative
 		margin-right: 20px
@@ -139,12 +156,10 @@
 		padding: 2px 8px
 		transition: all 0.6s ease-in
 		@include regular
+		@include fluidFontSize(18, 16, 768, 1170)
 		@include _1170
-			font-size: 16px
 			padding: 0px 5px
 			margin-right: 0px
-		@include _768
-			font-size: 20px
 		&:before
 			content: ""
 			width: 0

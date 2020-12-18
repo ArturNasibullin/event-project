@@ -41,6 +41,7 @@ function ready(fn) {
 				header.style.opacity = "0.9";
 				} else {
 				header.style.position = "absolute";
+				header.style.opacity = "1";
 				}
 		});
 	}
@@ -246,15 +247,23 @@ function ready(fn) {
 	//Кнопка menu
 	let btn = document.querySelector('.header-top__nav-btn');
 	let menu = document.querySelector('.menu');
+	let menuItem = document.querySelectorAll('.menu__item');
 
 	btn.addEventListener('click', () => {
 		menu.classList.toggle('active');
 		btn.classList.toggle('active');
+		
+		menuItem.forEach(item => {
+			item.addEventListener('click', () => {
+				btn.classList.remove('active');
+				menu.classList.remove('active');
+			});
+		});
 	});
 
 
 	//Animate CSS
-	animateCSS('.header-hero__title', 'animate__fadeInLeft');
+	animateCSS('.header-hero__text', 'animate__fadeInLeft');
 	animateCSS('.header-hero__slider', 'animate__fadeInRight');
 
 	function animateCSS (element, animation, prefix = 'animate__') {

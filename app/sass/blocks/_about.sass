@@ -8,14 +8,22 @@
 		margin-left: 0
 		width: 25%
 		text-align: center
+		@include _768
+			width: 50%
 	&__img
 		display: inline
 		width: 200px
 		height: 265px
+		@include _768
+			width: 140px
+			height: auto
 	&__number
 		font-size: 90px
 		color: $orange
 		+gotham
+		@include _768
+			font-size: 50px
+
 	&__text
 		margin-top: 25px
 		font-size: 22px
