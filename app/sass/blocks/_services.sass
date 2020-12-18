@@ -10,6 +10,10 @@
 			position: relative
 			background-color: #ffffff18
 			margin-right: 40px
+			@include _480
+				margin-right: 20px
+			@include _350
+				margin-right: 7px
 			&--active
 				display: inline-block
 				&:before
@@ -37,7 +41,6 @@
 			left: -7%
 		@include _768
 			width: 400px
-
 		&::after
 			content: ""
 			position: absolute
@@ -59,22 +62,32 @@
 
 	&__description
 		margin-left: 50%
-
+		@include _480
+			margin-left: 60%
+		@include _350
+			margin-top: 120%
+			margin-left: 30%
 	&__head
 		margin-top: 50px
 		margin-bottom: 30px
-		font-size: 50px
+		+fluidFontSize(24, 50, 480, 1170)
 		line-height: 1.14
 		+gotham
-		@include _768
-			font-size: 36px
+		@include _480
+			margin-top: 20px
+			margin-bottom: 10px
+			line-height: 1
+	&__checks
+		width: 160%
 	&__btn
 		margin-top: 60px
+		@include _350
+			margin-top: 20px
 
 .check
 	&_item
 		display: block
-		font-size: 22px
+		+fluidFontSize(18, 22, 480, 1170)
 		line-height: 2.27
 		+light
 		&:before
@@ -85,4 +98,5 @@
 			height: 18px
 			background: url(../img/check.png)
 		@include _768
-			font-size: 18px
+			line-height: 1.5
+			margin-bottom: 10px

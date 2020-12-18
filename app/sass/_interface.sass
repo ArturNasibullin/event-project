@@ -26,23 +26,23 @@ body
 	@include _768
 		font-size: 14px
 		padding: 20px 30px
+	@include _480
+		font-size: 12px
+		padding: 15px 15px
 
 .title
 	margin: 140px 0 70px
-	font-size: 55px
+	+fluidFontSize(42, 55, 768, 1170)
 	+gotham
 	@include _768
 		margin: 100px 0 40px
-		font-size: 42px
 
 .subtitle
-	font-size: 22px
+	+fluidFontSize(18, 22, 768, 1170)
 	font-weight: 400
 	line-height: 1.55
 	color: #666666
 	+light
-	@include _768
-		font-size: 18px
 
 .form
 	&__wrap
