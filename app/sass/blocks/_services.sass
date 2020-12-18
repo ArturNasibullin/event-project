@@ -6,16 +6,13 @@
 		position: relative
 	&__tabs
 		&-item
-			display: inline-block
+			display: inline
 			position: relative
 			background-color: #ffffff18
 			margin-right: 40px
-			@include _480
-				margin-right: 20px
 			@include _350
-				margin-right: 7px
+				display: block
 			&--active
-				display: inline-block
 				&:before
 					content: ""
 					width: 100%
@@ -70,19 +67,24 @@
 	&__head
 		margin-top: 50px
 		margin-bottom: 30px
-		+fluidFontSize(24, 50, 480, 1170)
+		+fluidFontSize(28, 50, 350, 1170)
 		line-height: 1.14
 		+gotham
 		@include _480
 			margin-top: 20px
-			margin-bottom: 10px
+			margin-bottom: 20px
 			line-height: 1
 	&__checks
 		width: 160%
 	&__btn
 		margin-top: 60px
+		@include _480
+			width: 100%
 		@include _350
 			margin-top: 20px
+	&__link
+		@include _480
+			margin-left: 20px
 
 .check
 	&_item

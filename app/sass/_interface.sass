@@ -31,14 +31,17 @@ body
 		width: 70%
 		margin: 0 auto
 		font-size: 12px
+		line-height: 1.3
 		padding: 15px 15px
 
 .title
 	margin: 100px 0 70px
 	+fluidFontSize(42, 55, 768, 1170)
 	+gotham
+	@include _979
+		margin: 80px 0 30px
 	@include _768
-		margin: 20px 0 40px
+		margin: 20px 0 20px
 
 .subtitle
 	+fluidFontSize(18, 22, 768, 1170)
@@ -54,16 +57,18 @@ body
 	&__item
 		width: 50%
 		margin-bottom: 30px
+		@include _480
+			width: 100%
 	&__label
 		display: block
 		margin: 20px 0
-		font-size: 30px
+		+fluidFontSize(18, 30, 480, 1170)
 		color: $metal
 		+light
 	&__select
 		width: 90%
-		height: 50px
-		font-size: 22px
+		height: 60px
+		+fluidFontSize(14, 22, 350, 1170)
 		padding-left: 10px
 		+light
 	&__range
@@ -83,11 +88,12 @@ body
 			border-radius: 50%
 			background: #ff9733
 			cursor: pointer
+
 	&__output
 		text-align: center
 		display: block
 		margin: 20px auto 0
-		font-size: 30px
+		+fluidFontSize(22, 30, 480, 1170)
 		color: $metal
 		transform: translateX(-35px)
 		+light
@@ -95,23 +101,30 @@ body
 		display: block
 		width: 100%
 		margin: 50px calc(40% - 100px)
+		@include _480
+			margin: 0 auto
+		&-small
+			display: block
+			+fluidFontSize(22, 30, 480, 1170)
+			color: #000
+			+light
+		&-big
+			+fluidFontSize(28, 55, 480, 1170)
+			margin-top: 30px
+			+gotham
 	&__callback
 		width: 30%
+		@include _480
+			width: 100%
 	&__input
 		width: 90%
 		margin: 30px 0
 		height: 50px
 		border: 1px solid #00000036
 		padding-left: 5px
-	&__precoast
-		&-small
-			font-size: 30px
-			color: #000
-			+light
-		&-big
-			margin-top: 20px
-			font-size: 55px
-			+gotham
+		@include _480
+			margin: 10px 0
+
 	&__btn
 		margin: 15px 0 0 100px
 	&__privacy-politic

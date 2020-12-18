@@ -89,6 +89,9 @@
 					width: 400px
 					height: 400px
 					+gradient
+				@include _350
+				&::after
+					right: -12%
 		&__title
 			+fluidFontSize(28, 40, 480, 1270)
 			+gotham
@@ -121,14 +124,14 @@
 				content: ""
 				position: absolute
 				z-index: -3
-				top: -60%
-				right: -33%
+				top: -28%
+				right: 0%
 				border-radius: 50%
-				width: 950px
-				height: 950px
+				width: 750px
+				height: 750px
 				+gradient
 				@include _979
-					right: -10%
+					top: -50%
 					width: 650px
 					height: 650px
 			&-arrows
@@ -187,7 +190,7 @@
 		border-radius: 5px
 		padding: 2px 8px
 		transition: all 0.6s ease-in
-		+fluidFontSize(12, 18, 768, 1170)
+		+fluidFontSize(14, 18, 350, 1170)
 		+regular
 		@include _1170
 			padding: 0px 5px
