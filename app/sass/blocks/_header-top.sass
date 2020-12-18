@@ -29,15 +29,15 @@
 				width: 0
 		&__contacts
 			width: 20%
-			@include fluidFontSize(22, 18, 768, 1170)
+			+fluidFontSize(22, 18, 768, 1170)
 			@include _768
 				margin: 0 auto
 				width: 50%
 			&-tel
 				line-height: 1.85
-				@include gotham
-				@include _768
-					@include fluidFontSize(10, 18, 350, 768)
+				+gotham
+				+_768
+					+fluidFontSize(10, 18, 350, 768)
 		&__btn
 			display: block
 			justify-self: center
@@ -47,9 +47,9 @@
 			text-transform: uppercase
 			font-size: 0.875rem
 			cursor: pointer
-			@include bold
+			+bold
 			@include _768
-				@include fluidFontSize(10, 18, 350, 768)
+				+fluidFontSize(10, 18, 350, 768)
 			&:focus
 				outline: none
 	&-hero
@@ -57,16 +57,27 @@
 			margin-top: 250px
 			position: relative
 		&__text
+			@include _768
+				text-align: center
+				position: relative
+				&::after
+					content: ""
+					position: absolute
+					z-index: -3
+					top: -40%
+					right: 5%
+					border-radius: 50%
+					width: 500px
+					height: 500px
+					+gradient
 		&__title
-			font-weight: 500
-			@include gotham
-			@include fluidFontSize(28, 40, 480, 1170)
+			+fluidFontSize(28, 40, 480, 1170)
+			+gotham
 		&__subtitle
 			margin: 20px 0 70px
-			font-weight: 300
 			line-height: 1.55
-			@include light
-			@include fluidFontSize(18, 22, 768, 1170)
+			+fluidFontSize(18, 22, 768, 1170)
+			+light
 		&__slider
 			position: absolute
 			top: -25%
@@ -89,7 +100,7 @@
 				border-radius: 50%
 				width: 700px
 				height: 700px
-				@include gradient
+				+gradient
 				@include _979
 					width: 500px
 					height: 500px
@@ -180,13 +191,10 @@
 
 .tabs
 	&__item
-		font-size: 22px
 		line-height: 2.05
 		text-align: center
 		position: relative
-		@include _768
-			font-size: 18px
-
+		+fluidFontSize(18, 22, 768, 1170)
 		&:before
 			content: ""
 			width: 0
@@ -227,4 +235,4 @@
 				bottom: 0
 				left: 0
 				background: $yellow
-		@include regular
+		+regular
