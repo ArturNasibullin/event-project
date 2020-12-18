@@ -37,11 +37,9 @@ function ready(fn) {
 			
 			let scrollPos = window.pageYOffset;
 				if (scrollPos > fixedSpot) {
-				header.style.position = "fixed";
-				header.style.opacity = "0.9";
+				header.classList.add('header-top__wrap--fixed');
 				} else {
-				header.style.position = "absolute";
-				header.style.opacity = "1";
+				header.classList.remove('header-top__wrap--fixed');
 				}
 		});
 	}
@@ -310,14 +308,13 @@ $(window).on('load', (function() {
 	});
 	$('#header-hero__tabs').slick({
 		slidesToShow: 5,
-		slidesToScroll: 5,
 		asNavFor: '.header-hero__slider-wrap',
 		focusOnSelect: true,
 	});
 
 	// Слайдер jobs
 	$('.jobs__wrap').slick({
-		slidesToShow: 2,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		swipe: true,
 		autoplay: true,
@@ -329,7 +326,6 @@ $(window).on('load', (function() {
 	// Слайдер models
 	$('.models__wrap').slick({
 		slidesToShow: 4,
-		slidesToScroll: 2,
 		swipe: true,
 		autoplay: true,
   		autoplaySpeed: 2000,

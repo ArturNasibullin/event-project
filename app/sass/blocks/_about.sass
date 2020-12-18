@@ -1,4 +1,7 @@
 .about
+	&__title
+		@include _480
+			margin-top: 100px
 	&__wrap
 		margin-top: 70px
 		display: flex
@@ -14,15 +17,16 @@
 			width: 100%
 	&__img
 		display: inline
-		width: 70%
-		height: 265px
+		height: 400px
+		width: auto
 		@include _768
-			height: 40%
+			height: 250px
+			width: auto
 		@include _480
-			width: 50%
-			height: 50%
+			height: 150px
+			width: auto
 	&__number
-		+fluidFontSize(50, 90, 480, 1170)
+		+fluidFontSize(30, 90, 480, 1170)
 		color: $orange
 		+gotham
 	&__text

@@ -14,26 +14,28 @@
 
 <body>
 	<header class="header">
-		<div class="header-top__wrap">
-			<button class="header-top__nav-btn burger">
-				<span class="burger__span"></span>
-			</button>
-			<div class="header-top__logo">
-				<img src="./img/logo.png" alt="MAXIIIMALS logo">
-			</div>
-			<div class="header-top__menu">
-				<nav class="menu">
-					<li class="menu__item"><a href="#services">Услуги</a></li>
-					<li class="menu__item"><a href="#calc">Стоимость</a></li>
-					<li class="menu__item"><a href="#jobs">Наши работы</a></li>
-					<li class="menu__item"><a href="#models">Наши модели</a></li>
-					<li class="menu__item"><a href="#about">О нас</a></li>
-					<li class="menu__item"><a href="#contacts">Контакты</a></li>
-				</nav>
-			</div>
-			<div class="header-top__contacts">
-				<a href="tel:88002332323" class="header-top__contacts-tel">8 800-233-23-23</a>
-				<button class="header-top__btn modal-open">заказать звонок</button>
+		<div class="container">
+			<div class="header-top__wrap">
+				<button class="header-top__nav-btn burger">
+					<span class="burger__span"></span>
+				</button>
+				<div class="header-top__logo">
+					<img src="./img/logo.png" alt="MAXIIIMALS logo">
+				</div>
+				<div class="header-top__menu">
+					<nav class="menu">
+						<li class="menu__item"><a href="#services">Услуги</a></li>
+						<li class="menu__item"><a href="#calc">Стоимость</a></li>
+						<li class="menu__item"><a href="#jobs">Наши работы</a></li>
+						<li class="menu__item"><a href="#models">Наши модели</a></li>
+						<li class="menu__item"><a href="#about">О нас</a></li>
+						<li class="menu__item"><a href="#contacts">Контакты</a></li>
+					</nav>
+				</div>
+				<div class="header-top__contacts">
+					<a href="tel:88002332323" class="header-top__contacts-tel">8 800-233-23-23</a>
+					<button class="header-top__btn modal-open">заказать звонок</button>
+				</div>
 			</div>
 		</div>
 		<div class="header-hero">
@@ -57,25 +59,24 @@
 					<div class="header-hero__slider">
 						<div class="header-hero__slider-wrap">
 							<div class="header-hero__slider-item">
-								<img src="./img/header-1.png" alt="header-1">
+								<img src="./img/header-1.png" class="header-hero__slider-img" alt="header-1">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-4.png" alt="header-2">
+								<img src="./img/header-4.png" class="header-hero__slider-img alt=" header-2">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-3.png" alt="header-3">
+								<img src="./img/header-3.png" class="header-hero__slider-img alt=" header-3">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-2.png" alt="header-4">
+								<img src="./img/header-2.png" class="header-hero__slider-img alt=" header-4">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-5.png" alt="header-5">
+								<img src="./img/header-5.png" class="header-hero__slider-img alt=" header-5">
 							</div>
 						</div>
-
 					</div>
-					<div class="header-hero__tabs">
-						<ul id="header-hero__tabs" class="tabs">
+					<div class="header-hero__tabs tabs">
+						<ul id="header-hero__tabs" class="tabs__wrap">
 							<li class="tabs__item tabs__item--active">Промоутеры</li>
 							<li class="tabs__item">Промо-модели</li>
 							<li class="tabs__item">Стендистки</li>
@@ -85,7 +86,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</header>
 
@@ -99,7 +99,7 @@
 			<div class="about__wrap">
 				<div class="about__item">
 					<img src="./img/about/1.png" alt="" class="about__img">
-					<div id="about__year" class="about__number">0</div>
+					<div id="about__year" class="about__number">11</div>
 					<div class="about__text">лет<br>работы</div>
 				</div>
 				<div class="about__item">
@@ -121,7 +121,7 @@
 		</div>
 	</section>
 
-	<section class="services" id="services">
+	<!-- <section class="services" id="services">
 		<div class="container">
 			<h2 class="services__title title">Наши услуги</h2>
 			<div class="services__tabs">
@@ -181,11 +181,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.services -->
+	</section> -->
 
-	<section class="calc" id="calc">
+	<!-- <section class="calc" id="calc">
 		<div class="container">
 			<div class="calc__wrap">
 				<h2 class="calc__title title">Узнайте стоимость Вашей акции<br>за 2 минуты!</h2>
@@ -237,7 +235,7 @@
 						</div>
 
 						<div class="form__item form__callback">
-							<input class="btn form__btn" type="submit" value="Заказать персонал">
+							<input class="btn form__btn callback-btn" type="submit" value="Заказать персонал">
 						</div>
 
 						<p class="form__privacy-politic">Нажимая на кнопку «заказать персонал» вы соглашаетесть с
@@ -245,10 +243,10 @@
 					</div>
 				</form>
 			</div>
-	</section>
-	<!-- /.calc -->
+	</section> -->
 
-	<section class="jobs" id="jobs">
+
+	<!-- <section class="jobs" id="jobs">
 		<div class="container">
 			<h2 class="jobs__title title">Наши работы</h2>
 			<div class="jobs__slider-arrows">
@@ -268,62 +266,45 @@
 					<button class="jobs__btn btn modal-open">Заказать персонал</button>
 					<a href="#" class="jobs__link link">Узнать больше</a>
 				</div>
-				<!-- /.jobs__item -->
+
 				<div class="jobs__item">
 					<div class="jobs__item-img"><img src="./img/jobs/jobs-2.jpg" alt="jobs-img"></div>
-					<!-- /.jobs__img -->
 					<div class="jobs__item-title">Промоакция магазина Пятерочка</div>
-					<!-- /.jobs__item-title -->
 					<div class="jobs__item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
-					<!-- /.jobs__item-subtitle -->
 					<button class="jobs__btn btn modal-open">Заказать персонал</button>
-					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
-					<!-- /.jobs__link link -->
 				</div>
-				<!-- /.jobs__item -->
+
 				<div class="jobs__item">
 					<div class="jobs__item-img"><img src="./img/jobs/jobs-3.jpg" alt="jobs-img"></div>
-					<!-- /.jobs__img -->
 					<div class="jobs__item-title">Промоакция World of tanks</div>
-					<!-- /.jobs__item-title -->
 					<div class="jobs__item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
-					<!-- /.jobs__item-subtitle -->
 					<button class="jobs__btn btn modal-open">Заказать персонал</button>
-					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
-					<!-- /.jobs__link link -->
 				</div>
-				<!-- /.jobs__item -->
+
 				<div class="jobs__item">
 					<div class="jobs__item-img"><img src="./img/jobs/jobs-4.jpg" alt="jobs-img"></div>
-					<!-- /.jobs__img -->
 					<div class="jobs__item-title">Промоакция магазина Пятерочка</div>
-					<!-- /.jobs__item-title -->
 					<div class="jobs__item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua.
 						Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
 						facilisis. </div>
-					<!-- /.jobs__item-subtitle -->
 					<button class="jobs__btn btn modal-open">Заказать персонал</button>
-					<!-- /.jobs__btn btn -->
 					<a href="#" class="jobs__link link">Узнать больше</a>
-					<!-- /.jobs__link link -->
 				</div>
-				<!-- /.jobs__item -->
 			</div>
 		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.jobs -->
+	</section> -->
 
-	<section class="models" id="models">
+
+	<!-- <section class="models" id="models">
 		<div class="container">
 			<h2 class="models__title title">Наши модели</h2>
 			<div class="models__slider-arrows">
@@ -334,127 +315,145 @@
 			</div>
 			<div class="models__wrap">
 				<div class="models__card">
-					<div class="models__img">
-						<img src="./img/models/model-1.jpg" alt="model-girl" class="models__card-img">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-1.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
 					</div>
-					<!-- /.models__img -->
 					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
 				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-2.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-3.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-4.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-1.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-2.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-3.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-				<div class="models__card">
-					<div class="models__img"><img src="./img/models/model-4.jpg" alt="model-girl"
-							class="models__card-img"></div>
-					<!-- /.models__img -->
-					<div class="models__name">Кристина Иванова</div>
-					<!-- /.models__name -->
-					<div class="models__socials">
-						<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
-						<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
-					</div>
-					<!-- /.models__socials -->
-				</div>
-				<!-- /.models__card -->
-			</div>
-			<!-- /.models__wrap -->
-		</div>
-	</section>
 
-	<section class="partners">
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-2.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+
+					</div>
+		
+					<div class="models__name">Кристина Иванова</div>
+
+
+				</div>
+
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-3.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+	
+					</div>
+
+					<div class="models__name">Кристина Иванова</div>
+
+				</div>
+	
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-4.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+				
+					</div>
+				
+					<div class="models__name">Кристина Иванова</div>
+					
+
+				</div>
+		
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-1.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+				
+					</div>
+				
+					<div class="models__name">Кристина Иванова</div>
+					
+
+				</div>
+			
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-2.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+				
+					</div>
+				
+					<div class="models__name">Кристина Иванова</div>
+					
+
+				</div>
+			
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-3.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+					
+					</div>
+				
+					<div class="models__name">Кристина Иванова</div>
+			
+
+				</div>
+	
+				<div class="models__card">
+					<div class="models__img models-img">
+						<div class="models-img__overlay"></div>
+						<img src="./img/models/model-4.jpg" alt="model-girl" class="models-img__content">
+						<div class="models__socials">
+							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-facebook"></i></a>
+							<a href="#" class="model__socials-link"><i class="icon icon-twitter"></i></a>
+						</div>
+				
+					</div>
+				
+					<div class="models__name">Кристина Иванова</div>
+			
+
+				</div>
+			
+			</div>
+	
+		</div>
+	</section> -->
+
+	<!-- <section class="partners">
 		<div class="container">
 			<h2 class="partners__title title">Нам доверяют</h2>
-			<!-- /.partners__title title -->
+
 			<div class="partners__slider-arrows">
 				<button class="arrow arrow-left partners__arrow-left" class="slick-prev"><img src="./img/arrow-left.png"
 						alt="left button"></button>
@@ -465,46 +464,45 @@
 				<div class="partners__item">
 					<img src="./img/partners/partner-1.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-2.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-3.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-4.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-1.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-2.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-3.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
+
 				<div class="partners__item">
 					<img src="./img/partners/partner-4.png" alt="partner">
 				</div>
-				<!-- /.partners__item -->
-			</div>
-			<!-- /.partners__wrap -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.partners -->
 
-	<section class="contacts" id="contacts">
+			</div>
+
+		</div>
+
+	</section> -->
+
+	<!-- <section class="contacts" id="contacts">
 		<div class="container">
 			<h2 class="contacts__title title">Остались вопросы?</h2>
-			<!-- /.contacts__title title -->
+
 			<div class="contacts__wrap">
 				<div class="contacts__item">
 					<p class="contacts__text">Свяжитесь с нами удобным для вас способом <br>или оставьте заявку в форме
@@ -514,7 +512,7 @@
 					<p class="contacts__adress">г. Москва, пл. Ленина, д. 1, оф. 2</p>
 					<p><a href="mailto:info@maximals.ru" class="contacts__mail">info@maximals.ru</a></p>
 				</div>
-				<!-- /.contacts__item -->
+
 				<div class="contacts__item contacts-method">
 					<h3 class="contacts-method__title">Выберите удобный способ связи:</h3>
 					<div class="contacts-method__wrap">
@@ -559,15 +557,15 @@
 						</div>
 					</form>
 				</div>
-				<!-- /.contacts__item -->
-			</div>
-			<!-- /.contacts__wrap -->
-		</div>
-		<!-- /.container -->
-	</section>
-	<!-- /.contacts -->
 
-	<footer class="footer">
+			</div>
+
+		</div>
+
+	</section> -->
+
+
+	<!-- <footer class="footer">
 		<div class="container">
 			<div class="footer__wrap">
 				<div class="footer__item">
@@ -575,7 +573,7 @@
 						<img src="./img/logo.png" alt="">
 					</div>
 				</div>
-				<!-- /.footer__item -->
+
 				<div class="footer__item">
 					<div class="footer__socials">
 						<a href="#" class="footer__socials-link">
@@ -591,9 +589,9 @@
 							<i class="icon icon-twitter"></i>
 						</a>
 					</div>
-					<!-- /.footer__socials -->
+
 				</div>
-				<!-- /.footer__item -->
+
 				<div class="footer__item">
 					<div class="footer__contacts header-top__contacts">
 						<a href="tel:88002332323" class="footer__contacts-tel contacts__tel">8 800-233-23-23</a>
@@ -607,13 +605,12 @@
 				<div class="footer_item">
 					<span class="footer__info">Разработал: Насибуллин А.Ф.</span>
 				</div>
-				<!-- /.footer__item -->
+
 			</div>
-			<!-- /.footer__wrap -->
+
 		</div>
-		<!-- /.container -->
-	</footer>
-	<!-- /.footer -->
+
+	</footer> -->
 
 	<div class="modal">
 		<div class="modal__overlay">
@@ -640,6 +637,8 @@
 			</div>
 		</div>
 	</div>
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.js"></script>

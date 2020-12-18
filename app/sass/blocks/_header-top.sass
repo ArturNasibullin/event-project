@@ -3,7 +3,20 @@
 		&__wrap
 			position: absolute
 			z-index: 999
+			background-color: transparent
+			top: 0
+			left: 0
+			display: flex
+			flex-direction: row
+			justify-content: center
+			align-items: center
+			width: 100%
+			padding: 10px 15px 15px
+		&--fixed
+			z-index: 999
 			background-color: #f1f1f1
+			position: fixed
+			opacity: .9
 			top: 0
 			left: 0
 			display: flex
@@ -35,9 +48,8 @@
 				width: 50%
 			&-tel
 				line-height: 1.85
+				+fluidFontSize(12, 16, 350, 768)
 				+gotham
-				+_768
-					+fluidFontSize(10, 18, 350, 768)
 		&__btn
 			display: block
 			justify-self: center
@@ -47,6 +59,7 @@
 			text-transform: uppercase
 			font-size: 0.875rem
 			cursor: pointer
+			background-color: transparent
 			+bold
 			@include _768
 				+fluidFontSize(10, 18, 350, 768)
@@ -54,10 +67,16 @@
 				outline: none
 	&-hero
 		&__wrap
+			display: flex
+			flex-wrap: wrap
 			margin-top: 250px
 			position: relative
+			@include _480
+				margin-top: 150px
 		&__text
-			@include _768
+			width: 50%
+			@include _480
+				width: 100%
 				text-align: center
 				position: relative
 				&::after
@@ -67,11 +86,11 @@
 					top: -40%
 					right: 5%
 					border-radius: 50%
-					width: 500px
-					height: 500px
+					width: 400px
+					height: 400px
 					+gradient
 		&__title
-			+fluidFontSize(28, 40, 480, 1170)
+			+fluidFontSize(28, 40, 480, 1270)
 			+gotham
 		&__subtitle
 			margin: 20px 0 70px
@@ -79,54 +98,56 @@
 			+fluidFontSize(18, 22, 768, 1170)
 			+light
 		&__slider
-			position: absolute
-			top: -25%
-			right: -20%
-			z-index: -1
-			margin-right: 20px
-			max-width: 750px
-			height: auto
-			display: inline-block
-			@include _979
-				max-width: 650px
-			@include _768
+			width: 50%
+			height: 550px
+			position: relative
+			@include _480
 				display: none
+			&-wrap
+				width: 100%
+				position: absolute
+				top: -30%
+				right: 0%
+				z-index: -1
+			&-item
+				position: absolute
+				top: 10%
+				left: 0
+				width: 100%
+			&-img
+				@include _979
+					height: 450px
 			&::after
 				content: ""
 				position: absolute
 				z-index: -3
-				top: 0
-				right: 150px
+				top: -60%
+				right: -33%
 				border-radius: 50%
-				width: 700px
-				height: 700px
+				width: 950px
+				height: 950px
 				+gradient
 				@include _979
-					width: 500px
-					height: 500px
+					right: -10%
+					width: 650px
+					height: 650px
 			&-arrows
-				position: absolute
-				z-index: 9999
-				top: 78%
-				left: 3%
-				width: 15%
+				margin-top: 50px
+				margin-left: 20px
+				width: 50%
 				@include _979
 					top: 78%
-				@include _768
+				@include _480
 					display: none
-
 		&__tabs
-			background-color: #f1f1f1
-			margin-top: 220px
+			width: 100%
+			background-color: #f1f1f1a8
+			margin-top: 20px
 			text-align: center
 			@include _979
-				margin-top: 100px
-			@include _768
+				margin-top: -120px
+			@include _480
 				display: none
-		&__slider-item img
-			@include _979
-				margin-left: 100px
-				height: 500px
 .arrow
 	background-color: transparent
 	border: none
@@ -166,7 +187,7 @@
 		border-radius: 5px
 		padding: 2px 8px
 		transition: all 0.6s ease-in
-		+fluidFontSize(18, 16, 768, 1170)
+		+fluidFontSize(12, 18, 768, 1170)
 		+regular
 		@include _1170
 			padding: 0px 5px
@@ -190,11 +211,17 @@
 		transform: scaleY(1)
 
 .tabs
+	&__wrap
 	&__item
+		width: 20%
 		line-height: 2.05
 		text-align: center
 		position: relative
-		+fluidFontSize(18, 22, 768, 1170)
+		+fluidFontSize(14, 16, 768, 1170)
+		+regular
+		@include _768
+			width: 100%
+
 		&:before
 			content: ""
 			width: 0
@@ -227,6 +254,7 @@
 			&:focus
 				outline: none
 		&.slick-current
+			border: 0.4px solid $yellow
 			&:before
 				content: ""
 				width: 100%
@@ -235,4 +263,3 @@
 				bottom: 0
 				left: 0
 				background: $yellow
-		+regular

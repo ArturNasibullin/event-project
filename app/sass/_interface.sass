@@ -27,15 +27,18 @@ body
 		font-size: 14px
 		padding: 20px 30px
 	@include _480
+		display: block
+		width: 70%
+		margin: 0 auto
 		font-size: 12px
 		padding: 15px 15px
 
 .title
-	margin: 140px 0 70px
+	margin: 100px 0 70px
 	+fluidFontSize(42, 55, 768, 1170)
 	+gotham
 	@include _768
-		margin: 100px 0 40px
+		margin: 20px 0 40px
 
 .subtitle
 	+fluidFontSize(18, 22, 768, 1170)
@@ -114,6 +117,8 @@ body
 	&__privacy-politic
 		font-size: 16px
 		+light
+.callback-btn
+	margin: 15px 0 0 20px
 .link
 	text-transform: uppercase
 	margin-left: 20px
@@ -125,6 +130,8 @@ body
 		display: block
 		margin-top: 20px
 		font-size: 12px
+	@include _480
+		margin-left: 0
 
 @mixin gradient
 	background: rgb(255,200,31)

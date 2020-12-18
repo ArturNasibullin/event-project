@@ -26,20 +26,10 @@
 		position: relative
 		width: 25%
 		margin-bottom: 40px
-		&-img
-			width: 255px
-			height: 340px
-			border-radius: 10px
+		@include _768
+			width: 50%
+
 	&__img
-		position: relative
-		&::before
-			content: ""
-			position: absolute
-			width: 255px
-			height: 340px
-			border-radius: 10px
-			background-color: $yellow
-			opacity: .6
 	&__name
 		margin-top: 40px
 		font-size: 22px
@@ -47,10 +37,32 @@
 		+light
 	&__socials
 		position: absolute
-		top: 33%
+		top: 45%
 		left: 13%
-		font-size: 50px
+		+fluidFontSize(20, 35, 480, 1170)
 		color: #ffffff
 		& a:hover
 			transition: all 0.3s
 			color: #1b74e7
+.models-img
+	position: relative
+	margin-right: 20px
+	&__overlay
+		position: absolute
+		opacity: 0.7
+		width: 255px
+		height: 340px
+		border-radius: 10px
+		background-color: $yellow
+		transition: all 0.2s
+		@include _979
+			display: none
+	&__content
+		width: 255px
+		height: 340px
+		border-radius: 10px
+		@include _979
+			width: 200px
+			height: auto
+	&:hover &__overlay
+		opacity: 0

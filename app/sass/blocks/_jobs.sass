@@ -16,17 +16,23 @@
 		padding-right: 50px
 		padding-left: 50px
 		margin-bottom: 40px
+		text-align: center
 		&:focus
 			outline: none
-		&-img
+		&-img img
+			display: block
+			width: 100%
+			margin: 0 auto
 		&-title
 			margin-top: 40px
-			font-size: 25px
+			+fluidFontSize(26, 45, 480, 1170)
 			+regular
 		&-description
 			margin: 40px 0
-			font-size: 18px
+			+fluidFontSize(18, 26, 480, 1170)
 			font-weight: 300
 			line-height: 1.7
 			color: #999999
 			+regular
+	&__link
+		margin-top: 30px
