@@ -3,6 +3,7 @@
 	&__overlay
 		width: 100%
 		min-height: 100vh
+		z-index: 7000
 		display: flex
 		justify-content: center
 		align-items: center
@@ -20,6 +21,7 @@
 			opacity: 1
 			pointer-events: inherit
 	&__wrapper
+		z-index: 9999
 		position: relative
 		margin-top: 90px
 		@include _480

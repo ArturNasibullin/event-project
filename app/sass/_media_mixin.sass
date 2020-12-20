@@ -13,3 +13,8 @@
 @mixin _350
     @media only screen and (max-width: 350px)
         @content
+
+@mixin transition
+    @for $i from 1 through 3
+        &:nth-child(#{$i})
+            transition: all .2s #{$i * .1}s ease-in

@@ -1,11 +1,11 @@
 function tabs(tabsSelector) {
     const tabs = document.querySelectorAll(tabsSelector),
-          tabsImg = document.querySelectorAll('.description__item'),
+          tabsContent = document.querySelectorAll('.description__wrap'),
           tabsParent = document.querySelector('#services__tabs');
 
-    function hideTabsImg() {
-        tabsImg.forEach(img => {
-            img.style.display = 'none';
+    function hideTabsContent() {
+        tabsContent.forEach(content => {
+            content.style.display = 'none';
         });
 
         tabs.forEach(item => {
@@ -14,11 +14,11 @@ function tabs(tabsSelector) {
     }
 
     function showTabs (i = 0) {
-        tabsImg[i].style.display = 'block';
+        tabsContent[i].style.display = 'flex';
         tabs[i].classList.add('services__tabs-item--active');
     }
 
-    hideTabsImg();
+    hideTabsContent();
     showTabs();
     
     tabsParent.addEventListener('click', (event) => {
@@ -27,7 +27,7 @@ function tabs(tabsSelector) {
         if (target && target.classList.contains(tabsSelector.slice(1))) {
             tabs.forEach((item, i) => {
                 if (target == item) {
-                    hideTabsImg();
+                    hideTabsContent();
                     showTabs(i);
                 }
             });

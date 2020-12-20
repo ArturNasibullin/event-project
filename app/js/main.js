@@ -94,7 +94,7 @@ function ready(fn) {
 	});
 
 
-	//Анимации
+	//Анимации для JavaScript
 	// fadeIn function 
 	function fadeIn(el, display) {
 		el.style.opacity = 0;
@@ -275,7 +275,7 @@ function ready(fn) {
 			}		
 	}
 
-	let servicesPage = document.querySelector('.about').offsetTop - 250;
+	let servicesPage = document.querySelector('.about').offsetTop + 350;
 	let jobsPage = document.querySelector('.calc').offsetTop - 200;
 	let modelsPage = document.querySelector('.jobs').offsetTop - 300;
 
@@ -287,7 +287,8 @@ function ready(fn) {
 			}
 		});
 	}
-	fadeBlock(servicesPage, '.services__img', 'animate__fadeInLeft');
+	fadeBlock(servicesPage, '.description__img', 'animate__fadeInLeft');
+	fadeBlock(servicesPage, '.description__text', 'animate__fadeInRight');
 	fadeBlock(jobsPage, '.jobs__wrap', 'animate__fadeInUp');
 	fadeBlock(modelsPage, '.models__wrap', 'animate__zoomIn');
 	
@@ -314,13 +315,22 @@ $(window).on('load', (function() {
 
 	// Слайдер jobs
 	$('.jobs__wrap').slick({
-		slidesToShow: 1,
+		slidesToShow: 2,
 		slidesToScroll: 1,
 		swipe: true,
 		autoplay: true,
   		autoplaySpeed: 3000,
 		prevArrow: $('.jobs__arrow-left'),
 		nextArrow: $('.jobs__arrow-right'),
+		responsive:[
+			{
+			  breakpoint: 769,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			  }
+			}
+		  ]
 	});
 
 	// Слайдер models
@@ -331,6 +341,29 @@ $(window).on('load', (function() {
   		autoplaySpeed: 2000,
 		prevArrow: $('.models__arrow-left'),
 		nextArrow: $('.models__arrow-right'),
+		responsive:[
+			{
+			  breakpoint: 769,
+			  settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			  }
+			},
+			{
+				breakpoint: 481,
+				settings: {
+				  slidesToShow: 2,
+				  slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 351,
+				settings: {
+				  slidesToShow: 1,
+				  slidesToScroll: 1
+				}
+			}
+		  ]
 	});
 
 	// Слайдер partners
@@ -342,6 +375,29 @@ $(window).on('load', (function() {
   		autoplaySpeed: 4000,
 		prevArrow: $('.partners__arrow-left'),
 		nextArrow: $('.partners__arrow-right'),
+		responsive:[
+			{
+			  breakpoint: 769,
+			  settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1
+			  }
+			},
+			{
+				breakpoint: 481,
+				settings: {
+				  slidesToShow: 2,
+				  slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 351,
+				settings: {
+				  slidesToShow: 1,
+				  slidesToScroll: 1
+				}
+			}
+		  ]
 	});
 
 }));

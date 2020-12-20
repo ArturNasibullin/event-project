@@ -1,9 +1,4 @@
 .services
-	&__wrap
-		margin-top: 50px
-		display: flex
-		flex-wrap: wrap
-		position: relative
 	&__tabs
 		&-item
 			display: inline
@@ -24,46 +19,69 @@
 					transition: all 0.3s
 			&:focus
 				outline: none
-	&__img
-		position: absolute
-		top: 0%
-		left: -15%
-		z-index: -1
-		width: 800px
-		height: 700px
-		display: inline-block
-		@include _979
-			width: 500px
-			height: auto
-			left: -7%
+	&__description
+
+.check
+	&_item
+		display: block
+		+fluidFontSize(18, 22, 480, 1170)
+		line-height: 2.27
+		+light
+		&:before
+			content: ""
+			display: inline-block
+			background: url(../img/check.png)
+			margin-right: 10px
+			width: 23px
+			height: 18px
 		@include _768
-			width: 400px
+			line-height: 1.5
+			margin-bottom: 10px
+
+.description
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		flex-direction: row
+		justify-content: space-between
+		align-items: center
+		@include _480
+			flex-direction: column
+	&__img
+		width: 40%
+		z-index: 999
+		position: relative
+		@include _480
+			width: 69%
+			margin-top: 30px
 		&::after
 			content: ""
 			position: absolute
-			z-index: -3
-			top: 5%
-			left: 12%
+			z-index: -377
+			top: 0%
+			left: 0%
 			border-radius: 50%
-			width: 640px
-			height: 640px
+			width: 440px
+			height: 440px
 			@include gradient
 			@include _979
-				left: 15%
-				width: 400px
-				height: 400px
-			@include _768
-				left: 8%
+				left: 3%
 				width: 350px
 				height: 350px
-
-	&__description
-		margin-left: 50%
+			@include _768
+				left: 6%
+				width: 250px
+				height: 250px
+			@include _350
+				width: 200px
+				height: 200px
+				top: -10%
+	&__text
+		z-index: 999
+		width: 60%
 		@include _480
-			margin-left: 60%
-		@include _350
-			margin-top: 120%
-			margin-left: 30%
+			margin-top: 30px
+			width: 100%
 	&__head
 		margin-top: 50px
 		margin-bottom: 30px
@@ -75,7 +93,6 @@
 			margin-bottom: 20px
 			line-height: 1
 	&__checks
-		width: 160%
 	&__btn
 		margin-top: 60px
 		@include _480
@@ -83,22 +100,3 @@
 		@include _350
 			margin-top: 20px
 	&__link
-		@include _480
-			margin-left: 20px
-
-.check
-	&_item
-		display: block
-		+fluidFontSize(18, 22, 480, 1170)
-		line-height: 2.27
-		+light
-		&:before
-			content: ""
-			display: inline-block
-			margin-right: 10px
-			width: 23px
-			height: 18px
-			background: url(../img/check.png)
-		@include _768
-			line-height: 1.5
-			margin-bottom: 10px

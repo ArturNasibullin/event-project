@@ -28,8 +28,12 @@
 		margin-bottom: 40px
 		@include _768
 			width: 50%
-
 	&__img
+		@include _350
+			display: block
+			width: 80%
+			margin: 0 auto
+
 	&__name
 		margin-top: 40px
 		font-size: 22px
@@ -39,11 +43,14 @@
 		position: absolute
 		top: 45%
 		left: 13%
-		+fluidFontSize(20, 35, 480, 1170)
+		+fluidFontSize(26, 35, 350, 1170)
 		color: #ffffff
 		& a:hover
 			transition: all 0.3s
 			color: #1b74e7
+		@include _768
+			left: 20%
+
 .models-img
 	position: relative
 	margin-right: 20px

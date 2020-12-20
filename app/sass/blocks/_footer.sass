@@ -5,21 +5,48 @@
 		flex-wrap: wrap
 		justify-content: space-between
 		align-items: start
+		@include _480
+			text-align: center
+	&__logo
+		display: block
+		width: 50%
+		margin: 0 auto
 	&__item
 		width: 33.333%
+		@include _480
+			width: 100%
+			margin-bottom: 20px
+		&:nth-child(4)
+			margin-top: 30px
+			width: 100%
+			text-align: center
+	&__socials
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+		align-items: center
 	&__socials-link
-		font-size: 50px
-		margin-right: 30px
+		width: 25%
 		color: #686666
 		opacity: .7
 		transition: all 0.3s
+		+fluidFontSize(32, 42, 350, 1170)
 		&:hover
 			color: $yellow
+		@include _768
+			width: 50%
+			margin-bottom: 10px
+			padding-left: 10px
 	&__contacts
+		width: 100%
 		&-tel
-			margin-top: 10px
+			margin-bottom: 10px
 			font-size: 20px
+		&-btn
+			width: 100%
+	&__credits
 	&__info
+		margin-top: 20px
 		font-size: 20px
 		opacity: .5
 		+regular

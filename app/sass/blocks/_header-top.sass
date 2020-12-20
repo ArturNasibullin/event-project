@@ -12,19 +12,19 @@
 			align-items: center
 			width: 100%
 			padding: 10px 15px 15px
-		&--fixed
-			z-index: 999
-			background-color: #f1f1f1
-			position: fixed
-			opacity: .9
-			top: 0
-			left: 0
-			display: flex
-			flex-direction: row
-			justify-content: center
-			align-items: center
-			width: 100%
-			padding: 10px 15px 15px
+			&--fixed
+				z-index: 9999
+				background-color: #f1f1f1
+				position: fixed
+				opacity: .9
+				top: 0
+				left: 0
+				display: flex
+				flex-direction: row
+				justify-content: center
+				align-items: center
+				width: 100%
+				padding: 10px 15px 15px
 		&__nav-btn
 			width: 10%
 		&__logo
@@ -75,6 +75,7 @@
 				margin-top: 150px
 		&__text
 			width: 50%
+			z-index: 5
 			@include _480
 				width: 100%
 				text-align: center
@@ -89,9 +90,13 @@
 					width: 400px
 					height: 400px
 					+gradient
+				@include _480
+				&::after
+					right: 5%
 				@include _350
 				&::after
-					right: -12%
+					right: -14%
+
 		&__title
 			+fluidFontSize(28, 40, 480, 1270)
 			+gotham
@@ -144,6 +149,7 @@
 					display: none
 		&__tabs
 			width: 100%
+			display: block
 			background-color: #f1f1f1a8
 			margin-top: 20px
 			text-align: center
@@ -175,7 +181,7 @@
 		flex-direction: column
 		text-align: center
 		width: 100%
-		margin-top: 70px
+		margin-top: 65px
 		padding-left: 10px
 		padding-bottom: 10px
 		position: absolute
@@ -184,6 +190,8 @@
 		transform-origin: top
 		transform: scaleY(0)
 		background-color: #f1f1f1
+	& li
+		@include transition
 	&__item
 		position: relative
 		margin-right: 20px
@@ -212,57 +220,3 @@
 			background: $yellow
 	&.active
 		transform: scaleY(1)
-
-.tabs
-	&__wrap
-	&__item
-		width: 20%
-		line-height: 2.05
-		text-align: center
-		position: relative
-		+fluidFontSize(14, 16, 768, 1170)
-		+regular
-		@include _768
-			width: 100%
-
-		&:before
-			content: ""
-			width: 0
-			height: 0.2em
-			position: absolute
-			bottom: 0
-			left: 50%
-			background: $yellow
-			transition: all 0.3s
-		&:hover
-			cursor: pointer
-		&:hover:before
-			width: 100%
-			left: 0
-			background: $yellow
-		&.slick-active
-			&:before
-				content: ""
-				width: 0
-				height: 0.2em
-				position: absolute
-				bottom: 0
-				left: 50%
-				background: $yellow
-				transition: all 0.3s
-			&:hover:before
-				width: 100%
-				left: 0
-				background: $yellow
-			&:focus
-				outline: none
-		&.slick-current
-			border: 0.4px solid $yellow
-			&:before
-				content: ""
-				width: 100%
-				height: 0.2em
-				position: absolute
-				bottom: 0
-				left: 0
-				background: $yellow
