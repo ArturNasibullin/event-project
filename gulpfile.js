@@ -60,7 +60,7 @@ gulp.task('babel', function () {
     .pipe(babel({
         presets: ["@babel/preset-env"]
 	}))
-	// .pipe(uglify()) // Сжимаем JS файл
+	.pipe(uglify()) // Сжимаем JS файл
 	.pipe(rename('main-min.js'))
     .pipe(gulp.dest('app/js'));
 });

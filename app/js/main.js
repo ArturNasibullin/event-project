@@ -356,7 +356,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	
 	// Формы
 	const forms = () => {
-		const form = document.querySelectorAll('form'),
+		const form = document.querySelectorAll('.form'),
 			  inputs = document.querySelectorAll('input'),
 			  phoneImputs = document.querySelectorAll('input[name="user_phone"]');
 	
