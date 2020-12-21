@@ -8,6 +8,7 @@ var gulp      		= require('gulp'), // Подключаем Gulp
     pngquant     	= require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     del         	= require('del'), // Подключаем библиотеку для удаления файлов и папок
 	cache       	= require('gulp-cache'), // Подключаем библиотеку кеширования
+	rename 			= require('gulp-rename'), //Подключаем бибилиотеку для переименования файлов
 	autoprefixer 	= require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 	
 
@@ -60,7 +61,8 @@ gulp.task('babel', function () {
         presets: ["@babel/preset-env"]
 	}))
 	// .pipe(uglify()) // Сжимаем JS файл
-    .pipe(gulp.dest('dist/js'));
+	.pipe(rename('main-min.js'))
+    .pipe(gulp.dest('app/js'));
 });
 
 gulp.task('img', function() {
@@ -85,7 +87,7 @@ gulp.task('prebuild', async function() {
 	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
 	.pipe(gulp.dest('dist/fonts'));
     
-    var buildJs = gulp.src('app/js/slick.js') // Переносим скрипты в продакшен
+    var buildJs = gulp.src(['app/js/slick.js', 'app/js/main-min.js']) // Переносим скрипты в продакшен
     .pipe(gulp.dest('dist/js'));
     
     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
@@ -108,6 +110,6 @@ gulp.task('watch', function() {
 	gulp.watch('app/js/main.js', gulp.parallel('script')); // Наблюдение за главным JS файлом
 });
 gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'script'));
-gulp.task('build', gulp.parallel('prebuild', 'img', 'sass', 'babel'));
+gulp.task('build', gulp.parallel('clean','prebuild', 'img', 'sass', 'babel'));
 
 

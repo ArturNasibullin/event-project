@@ -9,6 +9,7 @@
   "author": "Artur Nasibullin",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.8.1",
     "gulp-cli": "^2.3.0",
     "jquery": "^3.5.1",
     "save-dev": "0.0.1-security"
@@ -27,6 +28,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "imagemin-pngquant": "^9.0.1"
