@@ -7,9 +7,11 @@
 	<title>MAXIIIMALS</title>
 
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/slick.css">
 	<link rel="stylesheet" href="./fonts/icons.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+	<script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 </head>
 
 <body>
@@ -24,12 +26,12 @@
 				</div>
 				<div class="header-top__menu">
 					<nav class="menu">
-						<li class="menu__item"><a href="#services">Услуги</a></li>
-						<li class="menu__item"><a href="#calc">Стоимость</a></li>
-						<li class="menu__item"><a href="#jobs">Наши работы</a></li>
-						<li class="menu__item"><a href="#models">Наши модели</a></li>
-						<li class="menu__item"><a href="#about">О нас</a></li>
-						<li class="menu__item"><a href="#contacts">Контакты</a></li>
+						<li class="menu__item"><a class="menu__link" href="#services">Услуги</a></li>
+						<li class="menu__item"><a class="menu__link" href="#calc">Стоимость</a></li>
+						<li class="menu__item"><a class="menu__link" href="#jobs">Наши работы</a></li>
+						<li class="menu__item"><a class="menu__link" href="#models">Наши модели</a></li>
+						<li class="menu__item"><a class="menu__link" href="#about">О нас</a></li>
+						<li class="menu__item"><a class="menu__link" href="#contacts">Контакты</a></li>
 					</nav>
 				</div>
 				<div class="header-top__contacts">
@@ -62,16 +64,16 @@
 								<img src="./img/header-1.png" class="header-hero__slider-img" alt="header-1">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-4.png" class="header-hero__slider-img alt=" header-2">
+								<img src="./img/header-4.png" class="header-hero__slider-img" alt="header-2">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-3.png" class="header-hero__slider-img alt=" header-3">
+								<img src="./img/header-3.png" class="header-hero__slider-img" alt="header-3">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-2.png" class="header-hero__slider-img alt=" header-4">
+								<img src="./img/header-2.png" class="header-hero__slider-img" alt="header-4">
 							</div>
 							<div class="header-hero__slider-item">
-								<img src="./img/header-5.png" class="header-hero__slider-img alt=" header-5">
+								<img src="./img/header-5.png" class="header-hero__slider-img" alt="header-5">
 							</div>
 						</div>
 					</div>
@@ -132,49 +134,55 @@
 				</ul>
 			</div>
 			<div class="services__description description">
-				<div class="description__wrap">
-					<div class="description__img">
-						<img src="./img/services/services-4.png" alt="services image">
-					</div>
-					<div class="description__text">
-						<h3 class="description__head">Наши промоутеры:</h3>
-						<ul class="check">
-							<li class="check_item">Позитивны и улыбчивы</li>
-							<li class="check_item">Не стоят на месте</li>
-							<li class="check_item">Всегда помогут</li>
-						</ul>
-						<button class="description__btn btn modal-open">Заказать промоутеров</button>
-						<a href="#" class="description__link link">Узнать больше</a>
-					</div>
-				</div>
-				<div class="description__wrap">
-					<div class="description__img">
-						<img src="./img/services/services-2.png" alt="services image">
-					</div>
-					<div class="description__text">
-						<h3 class="description__head">Наши модели:</h3>
-						<ul class="check">
-							<li class="check_item">Привлекают внимание</li>
-							<li class="check_item">Знают иностранные языки</li>
-							<li class="check_item">Всегда в отличной форме</li>
-						</ul>
-						<button class="description__btn btn modal-open">Заказать промоутеров</button>
-						<a href="#" class="description__link link">Узнать больше</a>
+				<div class="description__item">
+					<div class="description__wrap">
+						<div class="description__img">
+							<img src="./img/services/services-4.png" alt="services image">
+						</div>
+						<div class="description__text">
+							<h3 class="description__head">Наши промоутеры:</h3>
+							<ul class="check">
+								<li class="check_item">Позитивны и улыбчивы</li>
+								<li class="check_item">Не стоят на месте</li>
+								<li class="check_item">Всегда помогут</li>
+							</ul>
+							<button class="description__btn btn modal-open">Заказать промоутеров</button>
+							<a href="#" class="description__link link">Узнать больше</a>
+						</div>
 					</div>
 				</div>
-				<div class="description__wrap">
-					<div class="description__img">
-						<img src="./img/services/services-3.png" alt="services image">
+				<div class="description__item">
+					<div class="description__wrap">
+						<div class="description__img">
+							<img src="./img/services/services-2.png" alt="services image">
+						</div>
+						<div class="description__text">
+							<h3 class="description__head">Наши модели:</h3>
+							<ul class="check">
+								<li class="check_item">Привлекают внимание</li>
+								<li class="check_item">Знают иностранные языки</li>
+								<li class="check_item">Всегда в отличной форме</li>
+							</ul>
+							<button class="description__btn btn modal-open">Заказать промоутеров</button>
+							<a href="#" class="description__link link">Узнать больше</a>
+						</div>
 					</div>
-					<div class="description__text">
-						<h3 class="description__head">Наши консультанты:</h3>
-						<ul class="check">
-							<li class="check_item">Разбираются в теме</li>
-							<li class="check_item">Знают подход к любому клиенту</li>
-							<li class="check_item">Воспитаны и общительны</li>
-						</ul>
-						<button class="description__btn btn modal-open">Заказать промоутеров</button>
-						<a href="#" class="description__link link">Узнать больше</a>
+				</div>
+				<div class="description__item">
+					<div class="description__wrap">
+						<div class="description__img">
+							<img src="./img/services/services-3.png" alt="services image">
+						</div>
+						<div class="description__text">
+							<h3 class="description__head">Наши консультанты:</h3>
+							<ul class="check">
+								<li class="check_item">Разбираются в теме</li>
+								<li class="check_item">Знают подход к любому клиенту</li>
+								<li class="check_item">Воспитаны и общительны</li>
+							</ul>
+							<button class="description__btn btn modal-open">Заказать промоутеров</button>
+							<a href="#" class="description__link link">Узнать больше</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -241,6 +249,7 @@
 					</div>
 				</form>
 			</div>
+		</div>
 	</section>
 
 
@@ -314,7 +323,6 @@
 			<div class="models__wrap">
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-1.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -327,7 +335,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-2.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -344,7 +351,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-3.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -360,7 +366,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-4.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -377,7 +382,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-1.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -394,7 +398,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-2.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -411,7 +414,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-3.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -428,7 +430,6 @@
 
 				<div class="models__card">
 					<div class="models__img models-img">
-						<div class="models-img__overlay"></div>
 						<img src="./img/models/model-4.jpg" alt="model-girl" class="models-img__content">
 						<div class="models__socials">
 							<a href="#" class="model__socials-link"><i class="icon icon-vk"></i></a>
@@ -609,7 +610,7 @@
 	<div class="modal">
 		<div class="modal__overlay">
 			<div class="modal__wrapper">
-				<a class="modal__close" href="#">&times</a>
+				<a class="modal__close" href="#">&times;</a>
 				<form action="#" class="modal__form form">
 					<div class="modal__form-wrapper">
 						<div class="modal__header">
@@ -634,9 +635,9 @@
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="js/libs.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/tabs.js"></script>
+	<script src="js/slick.js"></script>
 
 </body>
 

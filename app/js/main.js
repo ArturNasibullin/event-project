@@ -1,11 +1,4 @@
-function ready(fn) {
-	if (document.readyState != 'loading'){
-	  fn();
-	} else {
-	  document.addEventListener('DOMContentLoaded', fn);
-	}
-  }
-  ready(() => {
+window.addEventListener('DOMContentLoaded', () => {
 
 	// Отображение значений range в калькуляторе
 	function showSliderValue() {
@@ -46,23 +39,55 @@ function ready(fn) {
 	topMenuFixed();
 
 	//Smooth Scroll
-	const links = document.querySelectorAll(".menu__item a");
+	// const links = document.querySelectorAll('.menu__link');
 
-	links.forEach(link => {
-		link.addEventListener("click", clickHandler);
-	});
+	// links.forEach(link => {
+	// 	link.addEventListener("click", clickHandler);
+	// });
 
-	function clickHandler(e) {
-	e.preventDefault();
+	// function clickHandler(e) {
+	// e.preventDefault();
 
-	const href = this.getAttribute("href");
-	const offsetTop = document.querySelector(href).offsetTop - 100;
+	// const href = this.getAttribute("href");
+	// const offsetTop = document.querySelector(href).offsetTop - 100;
 
-	scroll({
-		top: offsetTop,
-		behavior: "smooth"
-		});
+	// scroll({
+	// 	top: offsetTop,
+	// 	behavior: "smooth"
+	// 	});
+	// }
+
+
+		// Vanilla JavaScript Scroll to Anchor
+
+	(function() {
+		scrollTo();
+	})();
+
+	function scrollTo() {
+		const links = document.querySelectorAll('.menu__link');
+		links.forEach(each => (each.onclick = scrollAnchors));
 	}
+
+	function scrollAnchors(e, respond = null) {
+		const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+		e.preventDefault();
+		var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+		const targetAnchor = document.querySelector(targetID);
+		if (!targetAnchor) return;
+		const originalTop = distanceToTop(targetAnchor);
+		window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+		const checkIfDone = setInterval(function() {
+			const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+			if (distanceToTop(targetAnchor) === 0 || atBottom) {
+				targetAnchor.tabIndex = '-1';
+				targetAnchor.focus();
+				window.history.pushState('', '', targetID);
+				clearInterval(checkIfDone);
+			}
+		}, 100);
+	}
+
 
 	// Эффект бегущих цифр
 	let time = 2000; //ms
@@ -94,7 +119,7 @@ function ready(fn) {
 	});
 
 
-	//Анимации для JavaScript
+	//Анимации на JavaScript для модального окна
 	// fadeIn function 
 	function fadeIn(el, display) {
 		el.style.opacity = 0;
@@ -291,113 +316,48 @@ function ready(fn) {
 	fadeBlock(servicesPage, '.description__text', 'animate__fadeInRight');
 	fadeBlock(jobsPage, '.jobs__wrap', 'animate__fadeInUp');
 	fadeBlock(modelsPage, '.models__wrap', 'animate__zoomIn');
+
+	// Табы в блоке Services
+	function tabs(tabsSelector) {
+		const tabs = document.querySelectorAll(tabsSelector),
+			  tabsContent = document.querySelectorAll('.description__item'),
+			  tabsParent = document.querySelector('#services__tabs');
 	
+		function hideTabsContent() {
+			tabsContent.forEach(content => {
+				content.style.display = 'none';
+			});
+	
+			tabs.forEach(item => {
+				item.classList.remove('services__tabs-item--active');
+			});
+		}
+	
+		function showTabs (i = 0) {
+			tabsContent[i].style.display = 'block';
+			tabs[i].classList.add('services__tabs-item--active');
+		}
+	
+		hideTabsContent();
+		showTabs();
+		
+		tabsParent.addEventListener('click', (event) => {
+			const target = event.target;
+	
+			if (target && target.classList.contains(tabsSelector.slice(1))) {
+				tabs.forEach((item, i) => {
+					if (target == item) {
+						hideTabsContent();
+						showTabs(i);
+					}
+				});
+			}
+		});
+	}
+	
+	tabs('.services__tabs-item');
+	
+
 });
 
 
-// Слайдер Slick
-$(window).on('load', (function() {
-
-	// Слайдер header
-	$('.header-hero__slider-wrap').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		fade: true,
-		swipe: false,
-		prevArrow: $('.arrow-left'),
-		nextArrow: $('.arrow-right'),
-	});
-	$('#header-hero__tabs').slick({
-		slidesToShow: 5,
-		asNavFor: '.header-hero__slider-wrap',
-		focusOnSelect: true,
-	});
-
-	// Слайдер jobs
-	$('.jobs__wrap').slick({
-		slidesToShow: 2,
-		slidesToScroll: 1,
-		swipe: true,
-		autoplay: true,
-  		autoplaySpeed: 3000,
-		prevArrow: $('.jobs__arrow-left'),
-		nextArrow: $('.jobs__arrow-right'),
-		responsive:[
-			{
-			  breakpoint: 769,
-			  settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			  }
-			}
-		  ]
-	});
-
-	// Слайдер models
-	$('.models__wrap').slick({
-		slidesToShow: 4,
-		swipe: true,
-		autoplay: true,
-  		autoplaySpeed: 2000,
-		prevArrow: $('.models__arrow-left'),
-		nextArrow: $('.models__arrow-right'),
-		responsive:[
-			{
-			  breakpoint: 769,
-			  settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1
-			  }
-			},
-			{
-				breakpoint: 481,
-				settings: {
-				  slidesToShow: 2,
-				  slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 351,
-				settings: {
-				  slidesToShow: 1,
-				  slidesToScroll: 1
-				}
-			}
-		  ]
-	});
-
-	// Слайдер partners
-	$('.partners__wrap').slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		swipe: true,
-		autoplay: true,
-  		autoplaySpeed: 4000,
-		prevArrow: $('.partners__arrow-left'),
-		nextArrow: $('.partners__arrow-right'),
-		responsive:[
-			{
-			  breakpoint: 769,
-			  settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1
-			  }
-			},
-			{
-				breakpoint: 481,
-				settings: {
-				  slidesToShow: 2,
-				  slidesToScroll: 1
-				}
-			},
-			{
-				breakpoint: 351,
-				settings: {
-				  slidesToShow: 1,
-				  slidesToScroll: 1
-				}
-			}
-		  ]
-	});
-
-}));

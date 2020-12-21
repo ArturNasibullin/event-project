@@ -6,6 +6,8 @@
 		top: 0%
 		right: 0
 		width: 20%
+		@include _480
+			display: none
 	&__wrap
 		display: flex
 		flex-wrap: wrap
@@ -23,7 +25,8 @@
 			height: 100px
 			@include gradient
 	&__item
-		filter: grayscale(.5)
 		width: 25%
 		margin-top: 30px
 		margin-bottom: 40px
+		@include _480
+			margin-right: 10px

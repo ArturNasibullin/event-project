@@ -23,11 +23,11 @@
 	&__wrapper
 		z-index: 9999
 		position: relative
-		margin-top: 90px
+		margin-top: 100px
 		@include _480
-			margin-top: 130px
+			margin-top: 0
 	&__header
-		font-size: 1.7em
+		font-size: +fluidFontSize(32, 42, 350, 1170)
 		text-transform: uppercase
 		margin-bottom: 30px
 		text-align: center
@@ -48,12 +48,11 @@
 		align-items: center
 		width: 90%
 		height: 5%
-		font-size: 24px
+		+fluidFontSize(16, 18, 350, 1170)
+		margin: 0
 	&__input
-
 	&__btn
 		width: 100%
-		-webkit-appearance: none
 	&__close
 		position: absolute
 		font-size: 60px

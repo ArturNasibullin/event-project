@@ -21,7 +21,7 @@
 			top: 25%
 			left: 30%
 			z-index: -3
-			background: #fff url("../img/contacts/old-phone.png")
+			background: url("../img/contacts/old-phone.png")
 			width: 300px
 			height: 300px
 			@include _768
@@ -39,6 +39,7 @@
 		color: $metal
 		+light
 	&__tel
+
 		margin-bottom: 50px
 		font-size: 30px
 		+gotham
@@ -57,11 +58,10 @@
 			align-content: center
 		&-callback
 			width: 50%
-			padding-left: 10px
 			@include _480
 				width: 100%
 		&-btn
-
+			padding: 15px 40px
 .contacts-method
 	@include _768
 		margin-top: 50px
