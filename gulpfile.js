@@ -109,7 +109,7 @@ gulp.task('watch', function() {
 	// gulp.watch(['app/js/main.js', 'app/js/libs.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом и за библиотеками
 	gulp.watch('app/js/main.js', gulp.parallel('script')); // Наблюдение за главным JS файлом
 });
-gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'script'));
-gulp.task('build', gulp.parallel('clean','prebuild', 'img', 'sass', 'babel'));
+gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'script', 'babel'));
+gulp.task('build', gulp.parallel('clean','prebuild', 'img', 'sass'));
 
 

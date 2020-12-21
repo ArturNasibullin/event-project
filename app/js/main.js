@@ -206,19 +206,19 @@ window.addEventListener('DOMContentLoaded', () => {
 			//Слушать изменение в Select и подставлять значение в calcTotal
 			select.addEventListener('change', (e) => {
 				switch (e.target.value) {
-					case '1':
+					case 'Prom':
 						selectValue = +e.target.value;
 						break;
-					case '2':
+					case 'Consult':
 						selectValue = +e.target.value;
 						break;
-					case '3':
+					case 'Stand':
 						selectValue = +e.target.value;
 						break;
-					case '4':
+					case 'Model':
 						selectValue = +e.target.value;
 						break;	
-					case '5':
+					case 'Hostes':
 						selectValue = +e.target.value;
 						break;
 			}});
@@ -358,22 +358,24 @@ window.addEventListener('DOMContentLoaded', () => {
 	const forms = () => {
 		const form = document.querySelectorAll('.form'),
 			  inputs = document.querySelectorAll('input'),
-			  phoneImputs = document.querySelectorAll('input[name="user_phone"]');
-	
+			  phoneImputs = document.querySelectorAll('input[name="user_phone"]'),
+			  modalMessage = document.querySelector('.form-status__header'),
+			  formModal = document.querySelector('.form-status');
+
 		phoneImputs.forEach(item => {
 			item.addEventListener('input', () => {
 				item.value = item.value.replace(/\D/, '');
 			});
 		});
-	
+
 		const message = {
 			  loading: 'Загрузка', //можно указать url картинки
-			  success: 'Отправлено! Скоро мы с Вами свяжемся!',
+			  success:  'Отправлено! Скоро мы с Вами свяжемся!',
 			  failure: 'Что-то пошло не так...'
 		};
 	
 		const postData = async (url, data) => {
-			document.querySelector('.status').innerHTML = message.loading;
+			modalMessage.textContent = message.loading;
 			let res = await fetch(url, {
 				method: 'POST',
 				body: data
@@ -384,38 +386,37 @@ window.addEventListener('DOMContentLoaded', () => {
 	
 		const clearInputs = () => {
 				inputs.forEach(item =>{
-					item.value = '';
+					if (item.hasAttribute('placeholder')) {
+						item.value = '';
+					}
 				});
 		};
 	
 		form.forEach(item => {
 			item.addEventListener('submit', (e) => {
 				e.preventDefault();
-	
-				let statusMessage = document.createElement('div');
-				statusMessage.classList.add('status');
-				item.appendChild(statusMessage);
-	
 				const formData = new FormData(item);
 	
-				postData('app/js/server.php', formData)
+				postData('js/server.php', formData)
 					.then (res => {
 						console.log(res);
-						statusMessage.textContent = message.success;
+						fadeOut(modal);
+						fadeIn(formModal, 'block');
+						modalMessage.textContent = message.success;
 					})
-					.catch(() => statusMessage.textContent = message.failure)
+					.catch(() => modalMessage.textContent = message.failure)
 					.finally (() => {
 						clearInputs();
 						setTimeout(() => {
-							statusMessage.remove();
-						},5000);
+							fadeOut(formModal)
+							document.body.style.overflow = '';
+						},4000);
 					});
 			});
 		});
 	};
 
 	forms();
-
 
 
 
