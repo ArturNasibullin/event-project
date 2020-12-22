@@ -1,7 +1,7 @@
 # Event-project
 Event Agency Web Site
 
-[Cайт Эвент-агентства MAXIIIMALS](ArturNasibullin.github.io/Event-Project)
+[Cайт Эвент-агентства MAXIIIMALS](https://arturnasibullin.github.io/ArturNasibullin.github.io/Event-Project/)
 
 В данном проекте были использованны: 
 1) методология БЭМ
