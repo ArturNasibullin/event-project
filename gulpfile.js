@@ -29,14 +29,15 @@ gulp.task('sass', function() { // Создаем таск Sass
 		.pipe(browserSync.reload({stream: true})); // Обновляем CSS на странице при изменении
 });
 
-// gulp.task('libs', function() {
-// 	return gulp.src([ // Берем все необходимые библиотеки
-// 		'app/js/libs/slick.min.js',  // Берем jQuery
-// 		])
-// 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
-// 		// .pipe(uglify()) // Сжимаем JS файл
-// 		.pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
-// });
+gulp.task('libs', function() {
+	return gulp.src([ // Берем все необходимые библиотеки
+		'app/js/libs/jquery.min.js',  // Берем jQuery
+		'app/js/libs/slick.min.js',  // Берем slick
+		])
+		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
+		// .pipe(uglify()) // Сжимаем JS файл
+		.pipe(gulp.dest('app/js')); // Выгружаем в папку app/js
+});
 
 
 gulp.task('code', function() {
@@ -53,17 +54,17 @@ gulp.task('clean', async function() {
 	return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-gulp.task('babel', function () {
-    return gulp.src([
-        'app/js/main.js'
-    ])
-    .pipe(babel({
-        presets: ["@babel/preset-env"]
-	}))
-	.pipe(uglify()) // Сжимаем JS файл
-	.pipe(rename('main-min.js'))
-    .pipe(gulp.dest('app/js'));
-});
+// gulp.task('babel', function () {
+//     return gulp.src([
+//         'app/js/main.js'
+//     ])
+//     .pipe(babel({
+//         presets: ["@babel/preset-env"]
+// 	}))
+// 	// .pipe(uglify()) // Сжимаем JS файл
+// 	.pipe(rename('main-min.js'))
+//     .pipe(gulp.dest('app/js'));
+// });
 
 gulp.task('img', function() {
 	return gulp.src('app/img/**/*') // Берем все изображения из app
@@ -80,14 +81,14 @@ gulp.task('img', function() {
 
 gulp.task('prebuild', async function() {
     var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-		'app/css/style.css'
+		'app/css/*.css'
         ])
 	.pipe(gulp.dest('dist/css'));
 	
 	var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
 	.pipe(gulp.dest('dist/fonts'));
     
-    var buildJs = gulp.src(['app/js/slick.js', 'app/js/main-min.js']) // Переносим скрипты в продакшен
+    var buildJs = gulp.src(['app/js/*.js']) // Переносим скрипты в продакшен
     .pipe(gulp.dest('dist/js'));
     
     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
@@ -106,10 +107,10 @@ gulp.task('clear', function (callback) {
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('sass')); // Наблюдение за sass файлами
 	gulp.watch('app/*.html', gulp.parallel('code')); // Наблюдение за HTML файлами в корне проекта
-	// gulp.watch(['app/js/main.js', 'app/js/libs.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом и за библиотеками
-	gulp.watch('app/js/main.js', gulp.parallel('script')); // Наблюдение за главным JS файлом
+	gulp.watch(['app/js/main.js', 'app/js/libs.js'], gulp.parallel('script')); // Наблюдение за главным JS файлом и за библиотеками
+	// gulp.watch('app/js/main.js', gulp.parallel('script')); // Наблюдение за главным JS файлом
 });
-gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'script', 'babel'));
+gulp.task('default', gulp.parallel('sass', 'browser-sync', 'watch', 'script', 'libs'));
 gulp.task('build', gulp.parallel('clean','prebuild', 'img', 'sass'));
 
 
